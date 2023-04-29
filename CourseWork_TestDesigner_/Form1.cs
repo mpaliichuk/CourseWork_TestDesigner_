@@ -15,16 +15,21 @@ namespace CourseWork_TestDesigner_
     public partial class Form1 : Form
     {
         public List<Question> questions = new List<Question>();
+        public List<Answer> answers2 = new List<Answer>();
         public Form1()
         {
             InitializeComponent();
             bindingSource1.DataSource = questions;
             dataGridView1.DataSource = bindingSource1;
+
+            bindingSource2.DataSource = answers2;
+            dataGridView2.DataSource = bindingSource2;
         }
+
         //public Form1(AddNewQuestion fr)
         //{
 
-            
+
         //}
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +37,11 @@ namespace CourseWork_TestDesigner_
             //If i remove here this it will add answers
             //If this stays it will add questions to Form1 (Fix it)
             //AddNewQuestion addNewQuestion = new AddNewQuestion(this);
-            AddNewQuestion addNewQuestion = new AddNewQuestion();
+            
+            //AddNewQuestion addNewQuestion = new AddNewQuestion();
+            //addNewQuestion.ShowDialog();
+
+            AddNewQuestion addNewQuestion = new AddNewQuestion(this);
             addNewQuestion.ShowDialog();
         }
 
@@ -70,12 +79,15 @@ namespace CourseWork_TestDesigner_
             {
                 string result = Path.GetFullPath(open.FileName);
                 Test test = Serializer.Deserialize<Test>(File.ReadAllText(result));
+               // Question question = Serializer.Deserialize<Question>(File.ReadAllText(result));
                 textBox1.Text = test.Author;
                 textBox2.Text = test.Title;
                 textBox3.Text = test.Description;
                 textBox4.Text = test.Info;
                 textBox5.Text = test.Questions.Count().ToString();
                 dataGridView1.DataSource = test.Questions;
+               // dataGridView2.DataSource = question.Answers;
+                
 
                 numericUpDown1.Value = test.PassPercent;
             }

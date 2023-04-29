@@ -63,6 +63,7 @@ namespace CourseWork_TestDesigner_
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,6 +72,7 @@ namespace CourseWork_TestDesigner_
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -190,40 +192,40 @@ namespace CourseWork_TestDesigner_
             // createNewTestToolStripMenuItem
             // 
             this.createNewTestToolStripMenuItem.Name = "createNewTestToolStripMenuItem";
-            this.createNewTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createNewTestToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.createNewTestToolStripMenuItem.Text = "Create new test";
             this.createNewTestToolStripMenuItem.Click += new System.EventHandler(this.createNewTestToolStripMenuItem_Click);
             // 
             // openTestToolStripMenuItem
             // 
             this.openTestToolStripMenuItem.Name = "openTestToolStripMenuItem";
-            this.openTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openTestToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.openTestToolStripMenuItem.Text = "Open test";
             this.openTestToolStripMenuItem.Click += new System.EventHandler(this.openTestToolStripMenuItem_Click);
             // 
             // saveTestToolStripMenuItem
             // 
             this.saveTestToolStripMenuItem.Name = "saveTestToolStripMenuItem";
-            this.saveTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveTestToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.saveTestToolStripMenuItem.Text = "Save test";
             this.saveTestToolStripMenuItem.Click += new System.EventHandler(this.saveTestToolStripMenuItem_Click);
             // 
             // closeTestToolStripMenuItem
             // 
             this.closeTestToolStripMenuItem.Name = "closeTestToolStripMenuItem";
-            this.closeTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeTestToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.closeTestToolStripMenuItem.Text = "Close test";
             this.closeTestToolStripMenuItem.Click += new System.EventHandler(this.closeTestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -386,6 +388,7 @@ namespace CourseWork_TestDesigner_
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,6 +429,7 @@ namespace CourseWork_TestDesigner_
         private System.Windows.Forms.ToolStripMenuItem closeTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        public System.Windows.Forms.BindingSource bindingSource2;
     }
 }
 

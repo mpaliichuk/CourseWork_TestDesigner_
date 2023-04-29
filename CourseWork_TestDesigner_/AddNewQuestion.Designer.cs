@@ -208,9 +208,8 @@ namespace CourseWork_TestDesigner_
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(399, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.Size = new System.Drawing.Size(0, 15);
             this.label6.TabIndex = 16;
-            this.label6.Text = "label6";
             // 
             // AddNewQuestion
             // 

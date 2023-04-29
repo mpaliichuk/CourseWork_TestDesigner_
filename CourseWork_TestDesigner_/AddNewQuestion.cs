@@ -64,8 +64,11 @@ namespace CourseWork_TestDesigner_
            // bindingSource2.DataSource = form1.questions;
         }
         Form1 form1 = new Form1();
+
         private void button6_Click(object sender, EventArgs e)
         {
+            
+
             int trueCounter = 0;
             
                 foreach (var item in answers)
@@ -81,6 +84,7 @@ namespace CourseWork_TestDesigner_
             {
                 Question question = new Question() { QuestionText = textBox1.Text, Points = Convert.ToInt32(numericUpDown1.Value), Answers = answers, Img = "123" };
                 form1.questions.Add(question);
+                form1.bindingSource2.DataSource = answers;
                 form1.bindingSource1.ResetBindings(false);
                 this.Close();
             }
