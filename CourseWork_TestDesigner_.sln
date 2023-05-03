@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWork_TestDesigner_", "CourseWork_TestDesigner_\CourseWork_TestDesigner_.csproj", "{FE8ED2A7-08D7-489E-88A7-38FB35F5AD8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseWork_TestDesigner_", "CourseWork_TestDesigner_\CourseWork_TestDesigner_.csproj", "{FE8ED2A7-08D7-489E-88A7-38FB35F5AD8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "TestLib\TestLib.csproj", "{CF8929AE-624B-49AB-995E-47F853CF114B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLib", "TestLib\TestLib.csproj", "{CF8929AE-624B-49AB-995E-47F853CF114B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTestSystemDB", "DALTestSystemDB\DALTestSystemDB.csproj", "{34C50DE9-2E15-4907-A249-300CCB1A97DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{8C174CEA-7244-4F47-B098-705CCF4A52A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{BD57CDCC-4E2E-47A4-8B38-6E4EEE43C723}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{CF8929AE-624B-49AB-995E-47F853CF114B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF8929AE-624B-49AB-995E-47F853CF114B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF8929AE-624B-49AB-995E-47F853CF114B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C50DE9-2E15-4907-A249-300CCB1A97DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C50DE9-2E15-4907-A249-300CCB1A97DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C50DE9-2E15-4907-A249-300CCB1A97DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C50DE9-2E15-4907-A249-300CCB1A97DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C174CEA-7244-4F47-B098-705CCF4A52A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C174CEA-7244-4F47-B098-705CCF4A52A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C174CEA-7244-4F47-B098-705CCF4A52A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C174CEA-7244-4F47-B098-705CCF4A52A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD57CDCC-4E2E-47A4-8B38-6E4EEE43C723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD57CDCC-4E2E-47A4-8B38-6E4EEE43C723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD57CDCC-4E2E-47A4-8B38-6E4EEE43C723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD57CDCC-4E2E-47A4-8B38-6E4EEE43C723}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

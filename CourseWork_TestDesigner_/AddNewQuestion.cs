@@ -36,19 +36,40 @@ namespace CourseWork_TestDesigner_
         private void button3_Click(object sender, EventArgs e)
         {
             //Doesnt work
-            int dataGridView = dataGridView1.CurrentCell.RowIndex;
-            foreach (DataGridView item in this.dataGridView1.SelectedRows)
-            {
-                dataGridView1.Rows.RemoveAt(dataGridView);
-            }
-        }
+            //int dataGridView = dataGridView1.CurrentCell.RowIndex;
+            //foreach (DataGridView item in this.dataGridView1.SelectedRows)
+            //{
+            //    dataGridView1.Rows.RemoveAt(dataGridView);
+            //}
 
+
+            //if(dataGridView1.SelectedRows.Count > 0)
+            //{
+            //    int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+            //    foreach (var item in answers)
+            //    {
+            //        dataGridView1.Rows.RemoveAt(rowIndex);
+            //    }
+
+            //    //foreach (DataGridView row in dataGridView1.Rows)
+            //    //{
+
+
+            //    //}
+
+            //}
+
+
+        }
+        string imageToSave;
         private void button4_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
+                imageToSave = open.FileName;
                 pictureBox1.Image = new Bitmap(open.FileName);
             }
         }
@@ -82,10 +103,13 @@ namespace CourseWork_TestDesigner_
             
             if(trueCounter>0)
             {
-                Question question = new Question() { QuestionText = textBox1.Text, Points = Convert.ToInt32(numericUpDown1.Value), Answers = answers, Img = "123" };
+                Question question = new Question() { QuestionText = textBox1.Text, Points = Convert.ToInt32(numericUpDown1.Value), Answers = answers, Img = ImgConverter.BitmapToBase64String(imageToSave) };
                 form1.questions.Add(question);
-                form1.bindingSource2.DataSource = answers;
+                form1.answers2 = question.Answers;
+                form1.bindingSource2.DataSource = form1.answers2;
+                form1.bindingSource1.DataSource = form1.questions;
                 form1.bindingSource1.ResetBindings(false);
+                form1.bindingSource2.ResetBindings(false);
                 this.Close();
             }
             if(trueCounter == 0)

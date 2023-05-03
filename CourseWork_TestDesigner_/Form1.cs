@@ -21,6 +21,7 @@ namespace CourseWork_TestDesigner_
             InitializeComponent();
             bindingSource1.DataSource = questions;
             dataGridView1.DataSource = bindingSource1;
+            
 
             bindingSource2.DataSource = answers2;
             dataGridView2.DataSource = bindingSource2;
@@ -86,7 +87,8 @@ namespace CourseWork_TestDesigner_
                 textBox4.Text = test.Info;
                 textBox5.Text = test.Questions.Count().ToString();
                 dataGridView1.DataSource = test.Questions;
-               // dataGridView2.DataSource = question.Answers;
+                //dataGridView2.DataSource = question.Answers;
+               // List<Question> forTEst =  new List<Question>();
                 
 
                 numericUpDown1.Value = test.PassPercent;
