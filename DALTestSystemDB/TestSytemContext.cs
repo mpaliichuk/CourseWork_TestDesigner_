@@ -61,12 +61,12 @@ namespace DALTestSystemDB
             modelBuilder.Entity<Answer>().HasMany(x => x.UserAnswers).WithOne(y => y.Answer);
 
 
-            Group admin = new Group() { Id = 1, Name = "Admins" };
-            modelBuilder.Entity<Group>().HasData(admin);
+            //Group admin = new Group() { Id = 1, Name = "Admins" };
+            //modelBuilder.Entity<Group>().HasData(admin);
 
-            User adminUser = new User() { Login = "Admin", Password = "Admin" };
-            adminUser.Groups.Add(admin);
-            modelBuilder.Entity<User>().HasData(adminUser);
+            //User adminUser = new User() {Id = 1, Login = "Admin", Password = "Admin" };
+            //adminUser.Groups.Add(admin);
+            //modelBuilder.Entity<User>().HasData(adminUser);
 
 
 
