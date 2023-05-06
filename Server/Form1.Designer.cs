@@ -29,19 +29,23 @@ namespace Server
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("General");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Users");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Groups");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Users & Groups", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Assign tests to users");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Review test results");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Users & Tests", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Tests");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Server");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("General");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Users");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Groups");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Users & Groups", new System.Windows.Forms.TreeNode[] {
+            treeNode24,
+            treeNode25});
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Assign tests to users");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Review test results");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Users & Tests", new System.Windows.Forms.TreeNode[] {
+            treeNode27,
+            treeNode28});
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Tests explorer");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Load test");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Tests", new System.Windows.Forms.TreeNode[] {
+            treeNode30,
+            treeNode31});
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Server");
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panelGeneral = new System.Windows.Forms.Panel();
@@ -82,14 +86,94 @@ namespace Server
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panelGroups = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.panelAssignTests = new System.Windows.Forms.Panel();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.activePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelReviewTests = new System.Windows.Forms.Panel();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.panelLoadTests = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panelTestsExplorer = new System.Windows.Forms.Panel();
+            this.deleteTestBtn = new System.Windows.Forms.Button();
+            this.addTestBtn = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panelTests = new System.Windows.Forms.Panel();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panelGeneral.SuspendLayout();
             this.panelUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelGroups.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            this.panelAssignTests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panelReviewTests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            this.panelLoadTests.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panelTestsExplorer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panelTests.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -107,30 +191,34 @@ namespace Server
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeView1.Location = new System.Drawing.Point(3, 1);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "General";
-            treeNode1.Text = "General";
-            treeNode2.Name = "Users";
-            treeNode2.Text = "Users";
-            treeNode3.Name = "Groups";
-            treeNode3.Text = "Groups";
-            treeNode4.Name = "Node1";
-            treeNode4.Text = "Users & Groups";
-            treeNode5.Name = "Assignteststousers";
-            treeNode5.Text = "Assign tests to users";
-            treeNode6.Name = "Reviewtestresults";
-            treeNode6.Text = "Review test results";
-            treeNode7.Name = "Node2";
-            treeNode7.Text = "Users & Tests";
-            treeNode8.Name = "Tests";
-            treeNode8.Text = "Tests";
-            treeNode9.Name = "Server";
-            treeNode9.Text = "Server";
+            treeNode23.Name = "General";
+            treeNode23.Text = "General";
+            treeNode24.Name = "Users";
+            treeNode24.Text = "Users";
+            treeNode25.Name = "Groups";
+            treeNode25.Text = "Groups";
+            treeNode26.Name = "Node1";
+            treeNode26.Text = "Users & Groups";
+            treeNode27.Name = "Assignteststousers";
+            treeNode27.Text = "Assign tests to users";
+            treeNode28.Name = "Reviewtestresults";
+            treeNode28.Text = "Review test results";
+            treeNode29.Name = "Node2";
+            treeNode29.Text = "Users & Tests";
+            treeNode30.Name = "Tests explorer";
+            treeNode30.Text = "Tests explorer";
+            treeNode31.Name = "Load test";
+            treeNode31.Text = "Load test";
+            treeNode32.Name = "Tests";
+            treeNode32.Text = "Tests";
+            treeNode33.Name = "Server";
+            treeNode33.Text = "Server";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode4,
-            treeNode7,
-            treeNode8,
-            treeNode9});
+            treeNode23,
+            treeNode26,
+            treeNode29,
+            treeNode32,
+            treeNode33});
             this.treeView1.Size = new System.Drawing.Size(158, 363);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -438,9 +526,9 @@ namespace Server
             this.panelUsers.Controls.Add(this.AddUserBtn);
             this.panelUsers.Controls.Add(this.dataGridView1);
             this.panelUsers.Controls.Add(this.label2);
-            this.panelUsers.Location = new System.Drawing.Point(6, 11);
+            this.panelUsers.Location = new System.Drawing.Point(753, 43);
             this.panelUsers.Name = "panelUsers";
-            this.panelUsers.Size = new System.Drawing.Size(741, 357);
+            this.panelUsers.Size = new System.Drawing.Size(44, 31);
             this.panelUsers.TabIndex = 3;
             this.panelUsers.Visible = false;
             // 
@@ -495,17 +583,146 @@ namespace Server
             // 
             // panelGroups
             // 
+            this.panelGroups.Controls.Add(this.button5);
+            this.panelGroups.Controls.Add(this.label40);
+            this.panelGroups.Controls.Add(this.label39);
+            this.panelGroups.Controls.Add(this.dataGridView9);
+            this.panelGroups.Controls.Add(this.dataGridView8);
+            this.panelGroups.Controls.Add(this.panelAssignTests);
             this.panelGroups.Controls.Add(this.label3);
-            this.panelGroups.Location = new System.Drawing.Point(753, 186);
+            this.panelGroups.Location = new System.Drawing.Point(6, 19);
             this.panelGroups.Name = "panelGroups";
-            this.panelGroups.Size = new System.Drawing.Size(200, 100);
+            this.panelGroups.Size = new System.Drawing.Size(157, 111);
             this.panelGroups.TabIndex = 4;
             this.panelGroups.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 26);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Add group";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(612, 12);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(129, 15);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "Users in selected group";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(282, 12);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(45, 15);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Groups";
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Location = new System.Drawing.Point(336, 33);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.RowTemplate.Height = 25;
+            this.dataGridView9.Size = new System.Drawing.Size(405, 316);
+            this.dataGridView9.TabIndex = 11;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(12, 55);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowTemplate.Height = 25;
+            this.dataGridView8.Size = new System.Drawing.Size(314, 293);
+            this.dataGridView8.TabIndex = 10;
+            // 
+            // panelAssignTests
+            // 
+            this.panelAssignTests.Controls.Add(this.dataGridView7);
+            this.panelAssignTests.Controls.Add(this.dataGridView6);
+            this.panelAssignTests.Controls.Add(this.dataGridView5);
+            this.panelAssignTests.Controls.Add(this.label38);
+            this.panelAssignTests.Controls.Add(this.label37);
+            this.panelAssignTests.Controls.Add(this.label36);
+            this.panelAssignTests.Controls.Add(this.label35);
+            this.panelAssignTests.Location = new System.Drawing.Point(767, 96);
+            this.panelAssignTests.Name = "panelAssignTests";
+            this.panelAssignTests.Size = new System.Drawing.Size(40, 23);
+            this.panelAssignTests.TabIndex = 9;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(16, 227);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowTemplate.Height = 25;
+            this.dataGridView7.Size = new System.Drawing.Size(746, 124);
+            this.dataGridView7.TabIndex = 6;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(481, 50);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowTemplate.Height = 25;
+            this.dataGridView6.Size = new System.Drawing.Size(266, 139);
+            this.dataGridView6.TabIndex = 5;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(16, 47);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowTemplate.Height = 25;
+            this.dataGridView5.Size = new System.Drawing.Size(425, 142);
+            this.dataGridView5.TabIndex = 4;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(16, 209);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(155, 15);
+            this.label38.TabIndex = 3;
+            this.label38.Text = "Assign tests to selected User";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(481, 28);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(74, 15);
+            this.label37.TabIndex = 2;
+            this.label37.Text = "Select Group";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(16, 28);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(64, 15);
+            this.label36.TabIndex = 1;
+            this.label36.Text = "Select User";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 8);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(108, 15);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Assign tests to user";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 16);
+            this.label3.Location = new System.Drawing.Point(12, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 15);
             this.label3.TabIndex = 0;
@@ -521,6 +738,10 @@ namespace Server
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panelReviewTests);
+            this.groupBox1.Controls.Add(this.panelLoadTests);
+            this.groupBox1.Controls.Add(this.panelTestsExplorer);
+            this.groupBox1.Controls.Add(this.panelTests);
             this.groupBox1.Controls.Add(this.panelGroups);
             this.groupBox1.Controls.Add(this.panelUsers);
             this.groupBox1.Controls.Add(this.activePanel);
@@ -531,15 +752,475 @@ namespace Server
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
+            // panelReviewTests
+            // 
+            this.panelReviewTests.Controls.Add(this.dataGridView10);
+            this.panelReviewTests.Controls.Add(this.button7);
+            this.panelReviewTests.Controls.Add(this.button6);
+            this.panelReviewTests.Controls.Add(this.textBox25);
+            this.panelReviewTests.Controls.Add(this.textBox24);
+            this.panelReviewTests.Controls.Add(this.label43);
+            this.panelReviewTests.Controls.Add(this.label42);
+            this.panelReviewTests.Controls.Add(this.label41);
+            this.panelReviewTests.Location = new System.Drawing.Point(765, 240);
+            this.panelReviewTests.Name = "panelReviewTests";
+            this.panelReviewTests.Size = new System.Drawing.Size(242, 46);
+            this.panelReviewTests.TabIndex = 9;
+            // 
+            // dataGridView10
+            // 
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Location = new System.Drawing.Point(36, 132);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.RowTemplate.Height = 25;
+            this.dataGridView10.Size = new System.Drawing.Size(735, 225);
+            this.dataGridView10.TabIndex = 7;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(611, 45);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(64, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "...";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(370, 45);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(48, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "...";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Location = new System.Drawing.Point(425, 45);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(179, 23);
+            this.textBox25.TabIndex = 4;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(181, 45);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(183, 23);
+            this.textBox24.TabIndex = 3;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(425, 26);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(27, 15);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "Test";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(181, 26);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(30, 15);
+            this.label42.TabIndex = 1;
+            this.label42.Text = "User";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(7, 11);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(103, 15);
+            this.label41.TabIndex = 0;
+            this.label41.Text = "Review test results";
+            // 
+            // panelLoadTests
+            // 
+            this.panelLoadTests.Controls.Add(this.button4);
+            this.panelLoadTests.Controls.Add(this.button3);
+            this.panelLoadTests.Controls.Add(this.button2);
+            this.panelLoadTests.Controls.Add(this.groupBox3);
+            this.panelLoadTests.Controls.Add(this.groupBox2);
+            this.panelLoadTests.Controls.Add(this.label27);
+            this.panelLoadTests.Location = new System.Drawing.Point(0, 6);
+            this.panelLoadTests.Name = "panelLoadTests";
+            this.panelLoadTests.Size = new System.Drawing.Size(774, 361);
+            this.panelLoadTests.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(641, 325);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(118, 23);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Save test to DB";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(485, 325);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Load test from file";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(684, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Clean form";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.dataGridView4);
+            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Location = new System.Drawing.Point(229, 32);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(539, 287);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Questions";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(7, 161);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(212, 120);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(225, 160);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowTemplate.Height = 25;
+            this.dataGridView4.Size = new System.Drawing.Size(305, 121);
+            this.dataGridView4.TabIndex = 1;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(527, 137);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.textBox23);
+            this.groupBox2.Controls.Add(this.textBox22);
+            this.groupBox2.Controls.Add(this.textBox21);
+            this.groupBox2.Controls.Add(this.textBox20);
+            this.groupBox2.Controls.Add(this.textBox19);
+            this.groupBox2.Controls.Add(this.textBox18);
+            this.groupBox2.Controls.Add(this.label34);
+            this.groupBox2.Controls.Add(this.label33);
+            this.groupBox2.Controls.Add(this.label32);
+            this.groupBox2.Controls.Add(this.label31);
+            this.groupBox2.Controls.Add(this.label30);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Location = new System.Drawing.Point(7, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(216, 292);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Test";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(159, 259);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(45, 23);
+            this.numericUpDown1.TabIndex = 13;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(146, 230);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(64, 23);
+            this.textBox23.TabIndex = 12;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(110, 195);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(100, 23);
+            this.textBox22.TabIndex = 11;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(110, 166);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(100, 23);
+            this.textBox21.TabIndex = 10;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(80, 100);
+            this.textBox20.Multiline = true;
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(130, 59);
+            this.textBox20.TabIndex = 9;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(75, 70);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(135, 23);
+            this.textBox19.TabIndex = 8;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(75, 13);
+            this.textBox18.Multiline = true;
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(135, 45);
+            this.textBox18.TabIndex = 7;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(7, 262);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(146, 15);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Minimum passing percent";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(7, 233);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(133, 15);
+            this.label33.TabIndex = 5;
+            this.label33.Text = "Maximum point for test";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(-1, 198);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(108, 15);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Count of questions";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(7, 166);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(97, 15);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Info for test taker";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 108);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(67, 15);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Description";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(7, 73);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(44, 15);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Author";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(7, 23);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(29, 15);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Title";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(7, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(55, 15);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Load test";
+            // 
+            // panelTestsExplorer
+            // 
+            this.panelTestsExplorer.Controls.Add(this.deleteTestBtn);
+            this.panelTestsExplorer.Controls.Add(this.addTestBtn);
+            this.panelTestsExplorer.Controls.Add(this.dataGridView2);
+            this.panelTestsExplorer.Controls.Add(this.label26);
+            this.panelTestsExplorer.Location = new System.Drawing.Point(753, 11);
+            this.panelTestsExplorer.Name = "panelTestsExplorer";
+            this.panelTestsExplorer.Size = new System.Drawing.Size(85, 27);
+            this.panelTestsExplorer.TabIndex = 7;
+            // 
+            // deleteTestBtn
+            // 
+            this.deleteTestBtn.Location = new System.Drawing.Point(152, 26);
+            this.deleteTestBtn.Name = "deleteTestBtn";
+            this.deleteTestBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteTestBtn.TabIndex = 3;
+            this.deleteTestBtn.Text = "Delete test";
+            this.deleteTestBtn.UseVisualStyleBackColor = true;
+            // 
+            // addTestBtn
+            // 
+            this.addTestBtn.Location = new System.Drawing.Point(71, 26);
+            this.addTestBtn.Name = "addTestBtn";
+            this.addTestBtn.Size = new System.Drawing.Size(75, 23);
+            this.addTestBtn.TabIndex = 2;
+            this.addTestBtn.Text = "Add Test";
+            this.addTestBtn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(24, 50);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(714, 269);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(12, 8);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(78, 15);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Tests explorer";
+            // 
+            // panelTests
+            // 
+            this.panelTests.Controls.Add(this.textBox17);
+            this.panelTests.Controls.Add(this.textBox16);
+            this.panelTests.Controls.Add(this.textBox15);
+            this.panelTests.Controls.Add(this.textBox14);
+            this.panelTests.Controls.Add(this.label25);
+            this.panelTests.Controls.Add(this.label24);
+            this.panelTests.Controls.Add(this.label23);
+            this.panelTests.Controls.Add(this.label22);
+            this.panelTests.Controls.Add(this.label21);
+            this.panelTests.Controls.Add(this.label20);
+            this.panelTests.Location = new System.Drawing.Point(756, 336);
+            this.panelTests.Name = "panelTests";
+            this.panelTests.Size = new System.Drawing.Size(48, 29);
+            this.panelTests.TabIndex = 6;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(153, 144);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(100, 23);
+            this.textBox17.TabIndex = 9;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(153, 115);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.Size = new System.Drawing.Size(100, 23);
+            this.textBox16.TabIndex = 8;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(153, 86);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(100, 23);
+            this.textBox15.TabIndex = 7;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(153, 57);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(100, 23);
+            this.textBox14.TabIndex = 6;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(53, 152);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(83, 15);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "AVG q-s count";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(53, 123);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(82, 15);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Min q-s count";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(51, 94);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(84, 15);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Max q-s count";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(51, 65);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(71, 15);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Count in DB";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(24, 37);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(70, 15);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Information";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(12, 11);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(32, 15);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Tests";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 376);
+            this.ClientSize = new System.Drawing.Size(952, 388);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Test server";
             this.panelGeneral.ResumeLayout(false);
             this.panelGeneral.PerformLayout();
             this.panelUsers.ResumeLayout(false);
@@ -547,7 +1228,31 @@ namespace Server
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelGroups.ResumeLayout(false);
             this.panelGroups.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            this.panelAssignTests.ResumeLayout(false);
+            this.panelAssignTests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panelReviewTests.ResumeLayout(false);
+            this.panelReviewTests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            this.panelLoadTests.ResumeLayout(false);
+            this.panelLoadTests.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panelTestsExplorer.ResumeLayout(false);
+            this.panelTestsExplorer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panelTests.ResumeLayout(false);
+            this.panelTests.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -597,6 +1302,68 @@ namespace Server
         private System.Windows.Forms.Button DeleteUserBtn;
         private System.Windows.Forms.Button EditUserBtn;
         private System.Windows.Forms.Button AddUserBtn;
+        private System.Windows.Forms.Panel panelTests;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panelTestsExplorer;
+        private System.Windows.Forms.Button deleteTestBtn;
+        private System.Windows.Forms.Button addTestBtn;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panelLoadTests;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Panel panelAssignTests;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.DataGridView dataGridView9;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.Panel panelReviewTests;
+        private System.Windows.Forms.DataGridView dataGridView10;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
     }
 }
 

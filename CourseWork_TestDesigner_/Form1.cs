@@ -16,6 +16,7 @@ namespace CourseWork_TestDesigner_
     {
         public List<Question> questions = new List<Question>();
         public List<Answer> answers2 = new List<Answer>();
+        public Test test = new Test();
         public Form1()
         {
             InitializeComponent();
@@ -79,7 +80,7 @@ namespace CourseWork_TestDesigner_
             if (open.ShowDialog() == DialogResult.OK)
             {
                 string result = Path.GetFullPath(open.FileName);
-                Test test = Serializer.Deserialize<Test>(File.ReadAllText(result));
+                test = Serializer.Deserialize<Test>(File.ReadAllText(result));
                // Question question = Serializer.Deserialize<Question>(File.ReadAllText(result));
                 textBox1.Text = test.Author;
                 textBox2.Text = test.Title;
@@ -87,7 +88,8 @@ namespace CourseWork_TestDesigner_
                 textBox4.Text = test.Info;
                 textBox5.Text = test.Questions.Count().ToString();
                 dataGridView1.DataSource = test.Questions;
-                //dataGridView2.DataSource = question.Answers;
+                dataGridView2.DataSource = test.Questions.Count() > 0 ? test.Questions[0].Answers : new List<Answer>();
+                questions = test.Questions;
                // List<Question> forTEst =  new List<Question>();
                 
 
@@ -119,6 +121,18 @@ namespace CourseWork_TestDesigner_
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //foreach (Question item in test.Questions)
+            //{
+
+            //}
+            if (questions.Count() > 0)
+            {
+                dataGridView2.DataSource = questions[e.RowIndex].Answers;
+            }
         }
     }
 }
