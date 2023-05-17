@@ -25,6 +25,7 @@ namespace DALTestSystemDB
         public DbSet<Answer> Answers { get; set; }
         public DbSet<UserTest> PassedTests { get; set; }
         public DbSet<UserAnswer> PassedTestAnswers { get; set; }
+        public DbSet<GroupUser> GroupUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,7 +40,18 @@ namespace DALTestSystemDB
             //------------------
             // User <-> Group
             modelBuilder.Entity<User>().HasMany(x => x.Groups).WithMany(y => y.Users);
+            modelBuilder.Entity<GroupUser>().HasKey(sc => new { sc.GroupsId, sc.UsersId});
 
+            modelBuilder.Entity<GroupUser>()
+            .HasOne<User>(sc => sc.User)
+            .WithMany(s => s.GroupUsers)
+            .HasForeignKey(sc => sc.UsersId);
+
+
+            modelBuilder.Entity<GroupUser>()
+                .HasOne<Group>(sc => sc.Group)
+                .WithMany(s => s.GroupUsers)
+                .HasForeignKey(sc => sc.GroupsId);
             // one to many
             //------------------
             // Test -> Question
@@ -53,6 +65,7 @@ namespace DALTestSystemDB
 
             // Test -> UserTest
             modelBuilder.Entity<Test>().HasMany(x => x.UserTests).WithOne(y => y.Test);
+
 
             // UserTest -> UserAnswer
             modelBuilder.Entity<UserTest>().HasMany(x => x.UserAnswers).WithOne(y => y.UserTest);

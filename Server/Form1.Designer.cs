@@ -29,23 +29,23 @@ namespace Server
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("General");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Users");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Groups");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Users & Groups", new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Assign tests to users");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Review test results");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Users & Tests", new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28});
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Tests explorer");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Load test");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Tests", new System.Windows.Forms.TreeNode[] {
-            treeNode30,
-            treeNode31});
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Server");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("General");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Users");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Groups");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Users & Groups", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Assign tests to users");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Review test results");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Users & Tests", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Tests explorer");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Load test");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Tests", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Server");
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panelGeneral = new System.Windows.Forms.Panel();
@@ -86,12 +86,15 @@ namespace Server
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panelGroups = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelAssignTests = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
@@ -99,9 +102,11 @@ namespace Server
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.activePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelServer = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label44 = new System.Windows.Forms.Label();
             this.panelReviewTests = new System.Windows.Forms.Panel();
             this.dataGridView10 = new System.Windows.Forms.DataGridView();
             this.button7 = new System.Windows.Forms.Button();
@@ -162,6 +167,7 @@ namespace Server
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panelServer.SuspendLayout();
             this.panelReviewTests.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.panelLoadTests.SuspendLayout();
@@ -191,34 +197,34 @@ namespace Server
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeView1.Location = new System.Drawing.Point(3, 1);
             this.treeView1.Name = "treeView1";
-            treeNode23.Name = "General";
-            treeNode23.Text = "General";
-            treeNode24.Name = "Users";
-            treeNode24.Text = "Users";
-            treeNode25.Name = "Groups";
-            treeNode25.Text = "Groups";
-            treeNode26.Name = "Node1";
-            treeNode26.Text = "Users & Groups";
-            treeNode27.Name = "Assignteststousers";
-            treeNode27.Text = "Assign tests to users";
-            treeNode28.Name = "Reviewtestresults";
-            treeNode28.Text = "Review test results";
-            treeNode29.Name = "Node2";
-            treeNode29.Text = "Users & Tests";
-            treeNode30.Name = "Tests explorer";
-            treeNode30.Text = "Tests explorer";
-            treeNode31.Name = "Load test";
-            treeNode31.Text = "Load test";
-            treeNode32.Name = "Tests";
-            treeNode32.Text = "Tests";
-            treeNode33.Name = "Server";
-            treeNode33.Text = "Server";
+            treeNode1.Name = "General";
+            treeNode1.Text = "General";
+            treeNode2.Name = "Users";
+            treeNode2.Text = "Users";
+            treeNode3.Name = "Groups";
+            treeNode3.Text = "Groups";
+            treeNode4.Name = "Node1";
+            treeNode4.Text = "Users & Groups";
+            treeNode5.Name = "Assignteststousers";
+            treeNode5.Text = "Assign tests to users";
+            treeNode6.Name = "Reviewtestresults";
+            treeNode6.Text = "Review test results";
+            treeNode7.Name = "Node2";
+            treeNode7.Text = "Users & Tests";
+            treeNode8.Name = "Tests explorer";
+            treeNode8.Text = "Tests explorer";
+            treeNode9.Name = "Load test";
+            treeNode9.Text = "Load test";
+            treeNode10.Name = "Tests";
+            treeNode10.Text = "Tests";
+            treeNode11.Name = "Server";
+            treeNode11.Text = "Server";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode26,
-            treeNode29,
-            treeNode32,
-            treeNode33});
+            treeNode1,
+            treeNode4,
+            treeNode7,
+            treeNode10,
+            treeNode11});
             this.treeView1.Size = new System.Drawing.Size(158, 363);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -256,7 +262,7 @@ namespace Server
             this.panelGeneral.Controls.Add(this.label4);
             this.panelGeneral.Controls.Add(this.label1);
             this.panelGeneral.Controls.Add(this.button1);
-            this.panelGeneral.Location = new System.Drawing.Point(753, 292);
+            this.panelGeneral.Location = new System.Drawing.Point(852, 307);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Size = new System.Drawing.Size(114, 38);
             this.panelGeneral.TabIndex = 2;
@@ -526,7 +532,7 @@ namespace Server
             this.panelUsers.Controls.Add(this.AddUserBtn);
             this.panelUsers.Controls.Add(this.dataGridView1);
             this.panelUsers.Controls.Add(this.label2);
-            this.panelUsers.Location = new System.Drawing.Point(753, 43);
+            this.panelUsers.Location = new System.Drawing.Point(852, 58);
             this.panelUsers.Name = "panelUsers";
             this.panelUsers.Size = new System.Drawing.Size(44, 31);
             this.panelUsers.TabIndex = 3;
@@ -583,18 +589,28 @@ namespace Server
             // 
             // panelGroups
             // 
+            this.panelGroups.Controls.Add(this.button9);
             this.panelGroups.Controls.Add(this.button5);
             this.panelGroups.Controls.Add(this.label40);
             this.panelGroups.Controls.Add(this.label39);
             this.panelGroups.Controls.Add(this.dataGridView9);
             this.panelGroups.Controls.Add(this.dataGridView8);
-            this.panelGroups.Controls.Add(this.panelAssignTests);
             this.panelGroups.Controls.Add(this.label3);
-            this.panelGroups.Location = new System.Drawing.Point(6, 19);
+            this.panelGroups.Location = new System.Drawing.Point(6, 26);
             this.panelGroups.Name = "panelGroups";
-            this.panelGroups.Size = new System.Drawing.Size(157, 111);
+            this.panelGroups.Size = new System.Drawing.Size(798, 337);
             this.panelGroups.TabIndex = 4;
             this.panelGroups.Visible = false;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(93, 26);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(100, 23);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "Delete group";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button5
             // 
@@ -641,9 +657,21 @@ namespace Server
             this.dataGridView8.RowTemplate.Height = 25;
             this.dataGridView8.Size = new System.Drawing.Size(314, 293);
             this.dataGridView8.TabIndex = 10;
+            this.dataGridView8.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView8_CellClick);
+            this.dataGridView8.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView8_CellContentClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Groups";
             // 
             // panelAssignTests
             // 
+            this.panelAssignTests.Controls.Add(this.button8);
             this.panelAssignTests.Controls.Add(this.dataGridView7);
             this.panelAssignTests.Controls.Add(this.dataGridView6);
             this.panelAssignTests.Controls.Add(this.dataGridView5);
@@ -651,18 +679,28 @@ namespace Server
             this.panelAssignTests.Controls.Add(this.label37);
             this.panelAssignTests.Controls.Add(this.label36);
             this.panelAssignTests.Controls.Add(this.label35);
-            this.panelAssignTests.Location = new System.Drawing.Point(767, 96);
+            this.panelAssignTests.Location = new System.Drawing.Point(548, 255);
             this.panelAssignTests.Name = "panelAssignTests";
-            this.panelAssignTests.Size = new System.Drawing.Size(40, 23);
+            this.panelAssignTests.Size = new System.Drawing.Size(310, 135);
             this.panelAssignTests.TabIndex = 9;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(679, 217);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "Assign Test";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dataGridView7
             // 
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(16, 227);
+            this.dataGridView7.Location = new System.Drawing.Point(16, 246);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowTemplate.Height = 25;
-            this.dataGridView7.Size = new System.Drawing.Size(746, 124);
+            this.dataGridView7.Size = new System.Drawing.Size(802, 124);
             this.dataGridView7.TabIndex = 6;
             // 
             // dataGridView6
@@ -671,7 +709,7 @@ namespace Server
             this.dataGridView6.Location = new System.Drawing.Point(481, 50);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.RowTemplate.Height = 25;
-            this.dataGridView6.Size = new System.Drawing.Size(266, 139);
+            this.dataGridView6.Size = new System.Drawing.Size(337, 139);
             this.dataGridView6.TabIndex = 5;
             // 
             // dataGridView5
@@ -682,6 +720,7 @@ namespace Server
             this.dataGridView5.RowTemplate.Height = 25;
             this.dataGridView5.Size = new System.Drawing.Size(425, 142);
             this.dataGridView5.TabIndex = 4;
+            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
             // label38
             // 
@@ -719,18 +758,9 @@ namespace Server
             this.label35.TabIndex = 0;
             this.label35.Text = "Assign tests to user";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Groups";
-            // 
             // activePanel
             // 
-            this.activePanel.Location = new System.Drawing.Point(753, 80);
+            this.activePanel.Location = new System.Drawing.Point(852, 96);
             this.activePanel.Name = "activePanel";
             this.activePanel.Size = new System.Drawing.Size(200, 100);
             this.activePanel.TabIndex = 5;
@@ -738,19 +768,49 @@ namespace Server
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panelServer);
             this.groupBox1.Controls.Add(this.panelReviewTests);
             this.groupBox1.Controls.Add(this.panelLoadTests);
+            this.groupBox1.Controls.Add(this.panelGroups);
             this.groupBox1.Controls.Add(this.panelTestsExplorer);
             this.groupBox1.Controls.Add(this.panelTests);
-            this.groupBox1.Controls.Add(this.panelGroups);
+            this.groupBox1.Controls.Add(this.panelAssignTests);
             this.groupBox1.Controls.Add(this.panelUsers);
             this.groupBox1.Controls.Add(this.activePanel);
             this.groupBox1.Controls.Add(this.panelGeneral);
             this.groupBox1.Location = new System.Drawing.Point(167, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 374);
+            this.groupBox1.Size = new System.Drawing.Size(882, 417);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // panelServer
+            // 
+            this.panelServer.Controls.Add(this.listView1);
+            this.panelServer.Controls.Add(this.label44);
+            this.panelServer.Location = new System.Drawing.Point(832, 204);
+            this.panelServer.Name = "panelServer";
+            this.panelServer.Size = new System.Drawing.Size(114, 59);
+            this.panelServer.TabIndex = 10;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(14, 33);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(183, 346);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(14, 15);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 15);
+            this.label44.TabIndex = 0;
+            this.label44.Text = "Server clients:";
             // 
             // panelReviewTests
             // 
@@ -762,7 +822,7 @@ namespace Server
             this.panelReviewTests.Controls.Add(this.label43);
             this.panelReviewTests.Controls.Add(this.label42);
             this.panelReviewTests.Controls.Add(this.label41);
-            this.panelReviewTests.Location = new System.Drawing.Point(765, 240);
+            this.panelReviewTests.Location = new System.Drawing.Point(864, 255);
             this.panelReviewTests.Name = "panelReviewTests";
             this.panelReviewTests.Size = new System.Drawing.Size(242, 46);
             this.panelReviewTests.TabIndex = 9;
@@ -843,9 +903,9 @@ namespace Server
             this.panelLoadTests.Controls.Add(this.groupBox3);
             this.panelLoadTests.Controls.Add(this.groupBox2);
             this.panelLoadTests.Controls.Add(this.label27);
-            this.panelLoadTests.Location = new System.Drawing.Point(0, 6);
+            this.panelLoadTests.Location = new System.Drawing.Point(816, 395);
             this.panelLoadTests.Name = "panelLoadTests";
-            this.panelLoadTests.Size = new System.Drawing.Size(774, 361);
+            this.panelLoadTests.Size = new System.Drawing.Size(45, 22);
             this.panelLoadTests.TabIndex = 8;
             // 
             // button4
@@ -895,6 +955,7 @@ namespace Server
             this.pictureBox1.Location = new System.Drawing.Point(7, 161);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(212, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -915,6 +976,7 @@ namespace Server
             this.dataGridView3.RowTemplate.Height = 25;
             this.dataGridView3.Size = new System.Drawing.Size(527, 137);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // groupBox2
             // 
@@ -1068,7 +1130,7 @@ namespace Server
             this.panelTestsExplorer.Controls.Add(this.addTestBtn);
             this.panelTestsExplorer.Controls.Add(this.dataGridView2);
             this.panelTestsExplorer.Controls.Add(this.label26);
-            this.panelTestsExplorer.Location = new System.Drawing.Point(753, 11);
+            this.panelTestsExplorer.Location = new System.Drawing.Point(852, 26);
             this.panelTestsExplorer.Name = "panelTestsExplorer";
             this.panelTestsExplorer.Size = new System.Drawing.Size(85, 27);
             this.panelTestsExplorer.TabIndex = 7;
@@ -1121,7 +1183,7 @@ namespace Server
             this.panelTests.Controls.Add(this.label22);
             this.panelTests.Controls.Add(this.label21);
             this.panelTests.Controls.Add(this.label20);
-            this.panelTests.Location = new System.Drawing.Point(756, 336);
+            this.panelTests.Location = new System.Drawing.Point(855, 351);
             this.panelTests.Name = "panelTests";
             this.panelTests.Size = new System.Drawing.Size(48, 29);
             this.panelTests.TabIndex = 6;
@@ -1216,7 +1278,7 @@ namespace Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 388);
+            this.ClientSize = new System.Drawing.Size(1084, 418);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
@@ -1236,6 +1298,8 @@ namespace Server
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panelServer.ResumeLayout(false);
+            this.panelServer.PerformLayout();
             this.panelReviewTests.ResumeLayout(false);
             this.panelReviewTests.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
@@ -1364,6 +1428,11 @@ namespace Server
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panelServer;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button button9;
     }
 }
 

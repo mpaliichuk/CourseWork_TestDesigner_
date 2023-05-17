@@ -54,7 +54,15 @@ namespace CourseWork_TestDesigner_
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+           // dataGridView1.Rows.RemoveAt(index);
+            questions.RemoveAt(index);
+
+            bindingSource1.DataSource = questions;
+            dataGridView1.DataSource = bindingSource1;
+
+
+            bindingSource2.DataSource = answers2;
+            dataGridView2.DataSource = bindingSource2;
         }
 
         private void createNewTestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,9 +130,10 @@ namespace CourseWork_TestDesigner_
         {
             this.Close();
         }
-
+        int index;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            index = e.RowIndex;
             //foreach (Question item in test.Questions)
             //{
 
@@ -132,6 +141,7 @@ namespace CourseWork_TestDesigner_
             if (questions.Count() > 0)
             {
                 dataGridView2.DataSource = questions[e.RowIndex].Answers;
+                pictureBox1.Image = ImgConverter.Base64StringToBitmap(questions[e.RowIndex].Img);
             }
         }
     }

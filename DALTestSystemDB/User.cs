@@ -19,10 +19,13 @@ namespace DALTestSystemDB
         public DateTime RegisterDate { get; set; }
         public virtual ICollection<Group> Groups { get; set; }
         public virtual ICollection<UserTest> UserTests { get; set; }
+        public virtual List<GroupUser> GroupUsers { get; set; }
+
         public User()
         {
             Groups = new List<Group>();
             UserTests = new List<UserTest>();
+            GroupUsers = new List<GroupUser>();
         }
     }
 }
