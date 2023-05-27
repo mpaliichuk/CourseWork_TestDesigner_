@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DALTestSystemDB
 {
-    
+    [Serializable]
     public class GroupUser
     {
         public int GroupsId { get; set; }

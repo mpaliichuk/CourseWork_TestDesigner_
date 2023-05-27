@@ -596,9 +596,9 @@ namespace Server
             this.panelGroups.Controls.Add(this.dataGridView9);
             this.panelGroups.Controls.Add(this.dataGridView8);
             this.panelGroups.Controls.Add(this.label3);
-            this.panelGroups.Location = new System.Drawing.Point(6, 26);
+            this.panelGroups.Location = new System.Drawing.Point(6, 338);
             this.panelGroups.Name = "panelGroups";
-            this.panelGroups.Size = new System.Drawing.Size(798, 337);
+            this.panelGroups.Size = new System.Drawing.Size(63, 25);
             this.panelGroups.TabIndex = 4;
             this.panelGroups.Visible = false;
             // 
@@ -679,9 +679,9 @@ namespace Server
             this.panelAssignTests.Controls.Add(this.label37);
             this.panelAssignTests.Controls.Add(this.label36);
             this.panelAssignTests.Controls.Add(this.label35);
-            this.panelAssignTests.Location = new System.Drawing.Point(548, 255);
+            this.panelAssignTests.Location = new System.Drawing.Point(767, 364);
             this.panelAssignTests.Name = "panelAssignTests";
-            this.panelAssignTests.Size = new System.Drawing.Size(310, 135);
+            this.panelAssignTests.Size = new System.Drawing.Size(82, 23);
             this.panelAssignTests.TabIndex = 9;
             // 
             // button8
@@ -789,9 +789,9 @@ namespace Server
             // 
             this.panelServer.Controls.Add(this.listView1);
             this.panelServer.Controls.Add(this.label44);
-            this.panelServer.Location = new System.Drawing.Point(832, 204);
+            this.panelServer.Location = new System.Drawing.Point(6, 16);
             this.panelServer.Name = "panelServer";
-            this.panelServer.Size = new System.Drawing.Size(114, 59);
+            this.panelServer.Size = new System.Drawing.Size(76, 37);
             this.panelServer.TabIndex = 10;
             // 
             // listView1
@@ -822,9 +822,9 @@ namespace Server
             this.panelReviewTests.Controls.Add(this.label43);
             this.panelReviewTests.Controls.Add(this.label42);
             this.panelReviewTests.Controls.Add(this.label41);
-            this.panelReviewTests.Location = new System.Drawing.Point(864, 255);
+            this.panelReviewTests.Location = new System.Drawing.Point(783, 104);
             this.panelReviewTests.Name = "panelReviewTests";
-            this.panelReviewTests.Size = new System.Drawing.Size(242, 46);
+            this.panelReviewTests.Size = new System.Drawing.Size(142, 287);
             this.panelReviewTests.TabIndex = 9;
             // 
             // dataGridView10
@@ -853,6 +853,7 @@ namespace Server
             this.button6.TabIndex = 5;
             this.button6.Text = "...";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox25
             // 
@@ -903,9 +904,9 @@ namespace Server
             this.panelLoadTests.Controls.Add(this.groupBox3);
             this.panelLoadTests.Controls.Add(this.groupBox2);
             this.panelLoadTests.Controls.Add(this.label27);
-            this.panelLoadTests.Location = new System.Drawing.Point(816, 395);
+            this.panelLoadTests.Location = new System.Drawing.Point(99, 368);
             this.panelLoadTests.Name = "panelLoadTests";
-            this.panelLoadTests.Size = new System.Drawing.Size(45, 22);
+            this.panelLoadTests.Size = new System.Drawing.Size(301, 141);
             this.panelLoadTests.TabIndex = 8;
             // 
             // button4
@@ -1130,7 +1131,7 @@ namespace Server
             this.panelTestsExplorer.Controls.Add(this.addTestBtn);
             this.panelTestsExplorer.Controls.Add(this.dataGridView2);
             this.panelTestsExplorer.Controls.Add(this.label26);
-            this.panelTestsExplorer.Location = new System.Drawing.Point(852, 26);
+            this.panelTestsExplorer.Location = new System.Drawing.Point(449, 103);
             this.panelTestsExplorer.Name = "panelTestsExplorer";
             this.panelTestsExplorer.Size = new System.Drawing.Size(85, 27);
             this.panelTestsExplorer.TabIndex = 7;

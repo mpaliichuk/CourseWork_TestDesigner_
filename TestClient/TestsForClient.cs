@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DALTestSystemDB;
+using Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,18 @@ namespace TestClient
         {
             InitializeComponent();
         }
-        public TestsForClient(string userName)
+        public TestsForClient(User user)
         {
             InitializeComponent();
-            this.userName = userName;
-            label4.Text = userName;
+           
+            label4.Text = user.Login;
+        }
+        public TestsForClient(IGenericRepository<Test> test)
+        {
+            InitializeComponent();
+
+            dataGridView1.DataSource = test;
+        
         }
 
         private void button1_Click(object sender, EventArgs e)

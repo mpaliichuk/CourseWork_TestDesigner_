@@ -14,11 +14,39 @@ using Microsoft.EntityFrameworkCore;
 using Repository;
 using TestLib;
 using Answer = TestLib.Answer;
+using System.Net;
+using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Server
 {
+    
     public partial class Form1 : Form
     {
+        //  IPAddress groupAddress;
+        //  int localPort = 7777;
+        //  int remotePort = 7778;
+        //  int ttl = 32;
+        ////  UdpClient udpClient;
+        //  IPEndPoint remoteEP;
+
+        //  private const string multicastAddress = "234.5.5.11";
+        //  private const int multicastPort = 7778;
+        //  private UdpClient udpClient;
+        //  private List<User> usersToSend = new List<User>();
+
+
+
+        private const string multicastAddress = "234.5.5.11";
+        private const int multicastPort = 7778;
+        private IPAddress groupAddress;
+        private int localPort = 7777;
+        private int remotePort = 7778;
+        private int ttl = 32;
+        private IPEndPoint remoteEP;
+        private List<User> usersToSend = new List<User>();
+        private List<UserTest> userTestToSend = new List<UserTest>();
+        private UdpClient udpClient;
         public Form1()
         {
             InitializeComponent();
@@ -26,12 +54,148 @@ namespace Server
             InitializeDataGridViewGroups();
             InitializeDataGridViewUserTest();
             InitializeDataGridViewTest();
-           // InitializeDataGridViewGroupUser();
+            InitializeUdpClient();
+
+            groupAddress = IPAddress.Parse(multicastAddress);
+            remoteEP = new IPEndPoint(groupAddress, remotePort);
+            listView1.Items.Add(remoteEP.ToString());
+
+            Task.Factory.StartNew(() => ReceiveThread(remoteEP));
+            SendDbInfo(usersToSend);
+            SendDbInfoTests(userTestToSend);
+        }
+
+        private void InitializeUdpClient()
+        {
+            try
+            {
+                // Initialize the udpClient object
+                udpClient = new UdpClient(localPort);
+                udpClient.JoinMulticastGroup(groupAddress, ttl);
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during initialization
+              ////  MessageBox.Show("Error initializing UDP client: " + ex.Message);
+            }
+        }
+        private void ReceiveThread(IPEndPoint remoteEP)
+        {
+            var formatter = new BinaryFormatter();
+            List<User> testResultfromClient;
+            byte[] receiveByte;
+
+            while (true)
+            {
+                receiveByte = udpClient.Receive(ref remoteEP);
+                using (var stream = new MemoryStream(receiveByte))
+                {
+                    testResultfromClient = (List<User>)formatter.Deserialize(stream);
+                }
+            }
+        }
+
+        private void SendDbInfo(List<User> userToInitialize)
+        {
+            var binaryFormatter = new BinaryFormatter();
+            using (var memoryStream = new MemoryStream())
+            {
+                binaryFormatter.Serialize(memoryStream, userToInitialize);
+                byte[] buffer = memoryStream.ToArray();
+                udpClient.Send(buffer, buffer.Length, groupAddress.ToString(), remotePort);
+            }
+        }
+        private void SendDbInfoTests(List<UserTest> userTestToInitialize)
+        {
+            var binaryFormatter = new BinaryFormatter();
+            using (var memoryStream = new MemoryStream())
+            {
+                binaryFormatter.Serialize(memoryStream, userTestToInitialize);
+                byte[] buffer = memoryStream.ToArray();
+                udpClient.Send(buffer, buffer.Length, groupAddress.ToString(), remotePort);
+            }
+        }
+        private void SendUserData(List<User> users)
+        {
+            try
+            {
+                // Check if udpClient is null
+                ////if (udpClient == null)
+                ////{
+                ////    MessageBox.Show("UDP client is not initialized.");
+                ////    return;
+                ////}
+
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, users);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+             //   MessageBox.Show("Error sending data: " + ex.Message);
+            }
+        }
+        private void SendUserTestData(List<UserTest> userTests)
+        {
+            try
+            {
+                // Check if udpClient is null
+                ////if (udpClient == null)
+                ////{
+                ////    MessageBox.Show("UDP client is not initialized.");
+                ////    return;
+                ////}
+
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, userTests);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+                //   MessageBox.Show("Error sending data: " + ex.Message);
+            }
+        }
+        private void SendTestData(List<DALTestSystemDB.Test> testsForUser)
+        {
+            try
+            {
+                // Check if udpClient is null
+                ////if (udpClient == null)
+                ////{
+                ////    MessageBox.Show("UDP client is not initialized.");
+                ////    return;
+                ////}
+
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, testsForUser);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+                //   MessageBox.Show("Error sending data: " + ex.Message);
+            }
         }
         List<Group> groups = new List<Group>();
         List<UserTest> userTest = new List<UserTest>();
         List<User> users = new List<User>();
         List<GroupUser> groupUsers = new List<GroupUser>();
+        List<UserTest> userTests = new List<UserTest>();
+        List<DALTestSystemDB.Test> testsForUser = new List<DALTestSystemDB.Test>();
         int userToShow;
         public List<int> groupId = new List<int>();
        public List<int> userId = new List<int>();
@@ -52,15 +216,23 @@ namespace Server
                 IGenericRepository<Group> repositoryGroups = work.Repository<Group>();
                 IGenericRepository<User> repositoryUsers = work.Repository<User>();
                 IGenericRepository<GroupUser> repositoryGroupUser = work.Repository<GroupUser>();
+                IGenericRepository<UserTest> repositoryUserTests = work.Repository<UserTest>();
                 dataGridView8.DataSource = repositoryGroups.GetAll();
                 dataGridView6.DataSource = repositoryGroups.GetAll();
                 groups = repositoryGroups.GetAll().ToList();
                 groupUsers = repositoryGroupUser.GetAll().ToList();
+                userTest = repositoryUserTests.GetAll().ToList();
+
+                
+
+               
+
+
                 //foreach(Group group in groups)
                 //{
                 //    group.Users = repositoryUsers.GetAll().ToList();
                 //}
-            
+
                 foreach (var user in groupUsers)
                 {
                    // button5.Text += user.UsersId.ToString();
@@ -72,9 +244,10 @@ namespace Server
                     userId.Add(user.UsersId);
                     // group.Users = repositoryUsers.GetAll().ToList();
                 }
-             
+                textBox3.Text = groups.Count().ToString();
             }
         }
+        
 
         public void InitializeDataGridViewUsers()
         {
@@ -99,6 +272,20 @@ namespace Server
                 dataGridView1.DataSource = repositoryUsers.GetAll();
                 dataGridView5.DataSource = repositoryUsers.GetAll();
                 users = repositoryUsers.GetAll().ToList();
+                usersToSend = users;
+
+                // Send user data to the multicast group
+                SendUserData(usersToSend);
+                textBox1.Text = users.Count().ToString();
+                int adminCount = 0;
+                foreach (var item in users)
+                {
+                    if(item.IsAdmin == true)
+                    {
+                        adminCount++;
+                    }
+                }
+                textBox2.Text = adminCount.ToString();
             }
         }
         private void InitializeDataGridViewUserTest()
@@ -118,6 +305,11 @@ namespace Server
                 IGenericRepository<UserTest> repositoryUserTest = work.Repository<UserTest>();
                 dataGridView7.DataSource = repositoryUserTest.GetAll();
                 userTest = repositoryUserTest.GetAll().ToList();
+                userTestToSend = userTest;
+
+                // Send user data to the multicast group
+                SendUserTestData(userTestToSend);
+
             }
         }
         private void InitializeDataGridViewTest()
@@ -136,6 +328,11 @@ namespace Server
             {
                 IGenericRepository<DALTestSystemDB.Test> repositoryTest = work.Repository<DALTestSystemDB.Test>();
                 dataGridView2.DataSource = repositoryTest.GetAll();
+                textBox10.Text = repositoryTest.GetAll().Count().ToString();
+                testsForUser = repositoryTest.GetAll().ToList();
+
+                // Send user data to the multicast group
+                SendTestData(testsForUser);
             }
         }
         private void InitializeDataGridViewGroupUser()
@@ -259,6 +456,48 @@ namespace Server
         }
         public List<TestLib.Question> questions = new List<TestLib.Question>();
         public List<DALTestSystemDB.Question> questionsDAL = new List<DALTestSystemDB.Question>();
+
+        private static int nextId = 1;
+
+        private static List<DALTestSystemDB.Question> ConvertToDAL(List<TestLib.Question> questions)
+        {
+            List<DALTestSystemDB.Question> questionsDAL = new List<DALTestSystemDB.Question>();
+
+            foreach (var question in questions)
+            {
+                DALTestSystemDB.Question questionDAL = new DALTestSystemDB.Question
+                {
+                    QuestionText = question.QuestionText,
+                    Img = question.Img,
+                    Points = question.Points,
+                    Answers = ConvertAnswersToDAL(question.Answers)
+                };
+
+                questionsDAL.Add(questionDAL);
+            }
+
+            return questionsDAL;
+        }
+
+        public static List<DALTestSystemDB.Answer> ConvertAnswersToDAL(List<TestLib.Answer> testLibAnswers)
+        {
+            List<DALTestSystemDB.Answer> answersDAL = new List<DALTestSystemDB.Answer>();
+
+            foreach (var testLibAnswer in testLibAnswers)
+            {
+                DALTestSystemDB.Answer answerDAL = new DALTestSystemDB.Answer
+                {
+                   // Id = nextId++, // Assign the next available Id
+                    AnswerText = testLibAnswer.TextAnswer,
+                    IsRight = testLibAnswer.IsRight
+                };
+
+                answersDAL.Add(answerDAL);
+            }
+
+            return answersDAL;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
            
@@ -280,6 +519,7 @@ namespace Server
                 // List<Question> forTEst =  new List<Question>();
                 dataGridView4.DataSource = test.Questions.Count() > 0 ? test.Questions[0].Answers : new List<Answer>();
                 questions = test.Questions;
+                //questionsDAL = test.Questions;
                 //string imageToSave = test.Questions[0].Img;
                 //pictureBox1.Image = ImgConverter.BitmapToBase64String(imageToSave);
 
@@ -359,8 +599,11 @@ namespace Server
             using (GenericUnitOfWork work = new GenericUnitOfWork(new TestSystemContext(options)))
             {
                 IGenericRepository<DALTestSystemDB.Test> repositoryTest = work.Repository<DALTestSystemDB.Test>();
-                
-                repositoryTest.Add(new DALTestSystemDB.Test {Title=textBox18.Text,Author=textBox19.Text, Description=textBox20.Text,Info=textBox21.Text,PassPercent=Convert.ToInt32(numericUpDown1.Value),LoadedDate=DateTime.Now,Questions=questionsDAL  });
+
+               
+                List<DALTestSystemDB.Question> addQuestions = new List<DALTestSystemDB.Question>();
+                addQuestions = ConvertToDAL(questions);
+                repositoryTest.Add(new DALTestSystemDB.Test {Title=textBox18.Text,Author=textBox19.Text, Description=textBox20.Text,Info=textBox21.Text,PassPercent=Convert.ToInt32(numericUpDown1.Value),LoadedDate=DateTime.Now,Questions= addQuestions  });
              
             }
             this.Close();
@@ -393,7 +636,9 @@ namespace Server
         private void dataGridView8_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             allUsersInGroup.Clear();
-            groupIndex = e.RowIndex;
+            groupIndex = Convert.ToInt32(dataGridView8.Rows[e.RowIndex].Cells[0].Value);
+
+
             //if (groups.Count() > 0)
             //{
             //    //  dataGridView9.DataSource = groups[e.RowIndex].Users.ToList();
@@ -405,14 +650,14 @@ namespace Server
 
 
 
-           
+
             userToShow = groupUsers[e.RowIndex].UsersId;
 
 
             
             foreach (var item in groupUsers)
             {
-                if(item.GroupsId == groupIndex +1)
+                if(item.GroupsId == groupIndex)
                 {
                    allUsersInGroup.Add(item.UsersId);
                 }
@@ -499,10 +744,17 @@ namespace Server
             using (GenericUnitOfWork work = new GenericUnitOfWork(new TestSystemContext(options)))
             {
                 IGenericRepository<Group> repoGroup = work.Repository<Group>();
-                DataGridViewRow selectedRow = dataGridView8.Rows[groupIndex];
-                var toDelete = repoGroup.FindById(Convert.ToInt32(selectedRow.Cells[0].Value));
+                //DataGridViewRow selectedRow = dataGridView8.Rows[groupIndex];
+                var toDelete = repoGroup.FindById(Convert.ToInt32(groupIndex));
                 repoGroup.Remove(toDelete);
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+           
+            dataGridView10.DataSource = userTest;
+
         }
     }
 }

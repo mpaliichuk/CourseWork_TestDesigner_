@@ -65,11 +65,26 @@ namespace Server
             {
                 IGenericRepository<UserTest> repositoryUserTest = work.Repository<UserTest>();
                 IGenericRepository<User> repositoryUser = work.Repository<User>();
-                User existingUser = work.Repository<User>().FindById(label1.Text);
-                existingUser.UserTests.Add(new UserTest() { });
-                repositoryUserTest.Add(new UserTest
-                { }
-                    );
+                IGenericRepository<Test> repositoryTest = work.Repository<Test>();
+                User existingUser = work.Repository<User>().FindById(Convert.ToInt32(label1.Text));
+                Test existingTest = work.Repository<Test>().FindById(index);
+               
+                //This info is stored in passedTest table in db
+
+                UserTest toAdd = new UserTest()
+                {
+                    IsPassed = false,
+                    IsTaked = false,
+                    PointsGrade = 0,
+                    TakedDate = null,
+                    User = existingUser,
+                    UserAnswers = null,
+                    Test = existingTest
+                };
+                //existingUser.UserTests.Add(toAdd);
+                repositoryUserTest.Add(toAdd);
+                
+                work.SaveChanges();
             }
             
             this.Close();
@@ -131,9 +146,9 @@ namespace Server
         int index;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            UserTest userTest = new UserTest();
+            index = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+           // DataGridViewRow selectedRow = dataGridView1.Rows[index];
+         //   UserTest userTest = new UserTest();
             //Test newTest = new Test();
             //userTest.IsPassed = false;
             //userTest.IsTaked = false;
