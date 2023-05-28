@@ -8,6 +8,7 @@ namespace DALTestSystemDB
     public class UserTest
     {
         public int Id { get; set; }
+        public int UserId { get; set; }
         public virtual User User { get; set; }
         public virtual Test Test { get; set; }
         public int PointsGrade { get; set; }

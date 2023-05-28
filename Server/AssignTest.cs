@@ -68,7 +68,7 @@ namespace Server
                 IGenericRepository<Test> repositoryTest = work.Repository<Test>();
                 User existingUser = work.Repository<User>().FindById(Convert.ToInt32(label1.Text));
                 Test existingTest = work.Repository<Test>().FindById(index);
-               
+
                 //This info is stored in passedTest table in db
 
                 UserTest toAdd = new UserTest()
@@ -77,6 +77,7 @@ namespace Server
                     IsTaked = false,
                     PointsGrade = 0,
                     TakedDate = null,
+                    UserId = existingUser.Id,
                     User = existingUser,
                     UserAnswers = null,
                     Test = existingTest

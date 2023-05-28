@@ -28,12 +28,16 @@ namespace TestClient
         private bool isRunning = true;
         private List<User> userToInitialize = new List<User>();
         private List<UserTest> userTestToInitialize = new List<UserTest>();
+        private List<Test> testForClient = new List<Test>();
+        private List<Question> questionForClients = new List<Question>();
         private ManualResetEvent dataReceivedEvent = new ManualResetEvent(false);
+        private User userToAdd = new User();
 
         public Form1()
         {
             InitializeComponent();
             InitializeUdpClient();
+             udpClient.Client.ReceiveBufferSize = 65536;
             StartListening();
         }
 
@@ -56,6 +60,8 @@ namespace TestClient
                     {
                         byte[] buffer = udpClient.Receive(ref remoteEndPoint);
                         byte[] buffer2 = udpClient.Receive(ref remoteEndPoint);
+                        byte[] buffer3 = udpClient.Receive(ref remoteEndPoint);
+                        byte[] buffer4 = udpClient.Receive(ref remoteEndPoint);
                         var binaryFormatter = new BinaryFormatter();
                         using (var memoryStream = new MemoryStream(buffer))
                         {
@@ -64,10 +70,22 @@ namespace TestClient
                         }
                         using (var memoryStream = new MemoryStream(buffer2))
                         {
+                           
+                            
+
                             userTestToInitialize = binaryFormatter.Deserialize(memoryStream) as List<UserTest>;
 
                         }
-                       
+                        using (var memoryStream = new MemoryStream(buffer3))
+                        {
+                            testForClient = binaryFormatter.Deserialize(memoryStream) as List<Test>;
+                            
+                        }
+                        //using (var memoryStream = new MemoryStream(buffer4))
+                        //{
+                        //    questionForClients = binaryFormatter.Deserialize(memoryStream) as List<Question>;
+                        //}
+
                         // Signal that the data has been received and processed
                         dataReceivedEvent.Set();
                     }
@@ -98,16 +116,27 @@ namespace TestClient
                         return true;
                     }
                 }
+               
                 return false;
             });
 
             // Update UI based on the result on the UI thread
             if (isCredentialsValid)
             {
+             
+                foreach (var item in userToInitialize)
+                {
+                    if (textBox1.Text == item.Login && textBox2.Text == item.Password)
+                    {
+                        userToAdd = item;
+                        break;
+                    }
+                    
+                }
                 User toTest = new User();
-                UserTest tests = (UserTest)toTest.UserTests;
+              //  UserTest tests = (UserTest)toTest.UserTests;
                 
-                TestsForClient testsForClient = new TestsForClient();
+                TestsForClient testsForClient = new TestsForClient(testForClient[1], userToAdd, userTestToInitialize);
                 testsForClient.ShowDialog();
             }
             else

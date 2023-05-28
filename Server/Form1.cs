@@ -20,7 +20,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Server
 {
-    
+
     public partial class Form1 : Form
     {
         //  IPAddress groupAddress;
@@ -46,6 +46,8 @@ namespace Server
         private IPEndPoint remoteEP;
         private List<User> usersToSend = new List<User>();
         private List<UserTest> userTestToSend = new List<UserTest>();
+        private List<DALTestSystemDB.Test> TestToSend = new List<DALTestSystemDB.Test>();
+        private List<DALTestSystemDB.Question> QuestionsToSend = new List<DALTestSystemDB.Question>();
         private UdpClient udpClient;
         public Form1()
         {
@@ -63,6 +65,9 @@ namespace Server
             Task.Factory.StartNew(() => ReceiveThread(remoteEP));
             SendDbInfo(usersToSend);
             SendDbInfoTests(userTestToSend);
+            SendDbInfoTestsForClient(TestToSend);
+            SendDbInfoQuestionsForClient(QuestionsToSend);
+
         }
 
         private void InitializeUdpClient()
@@ -76,7 +81,7 @@ namespace Server
             catch (Exception ex)
             {
                 // Handle any exceptions that occur during initialization
-              ////  MessageBox.Show("Error initializing UDP client: " + ex.Message);
+                ////  MessageBox.Show("Error initializing UDP client: " + ex.Message);
             }
         }
         private void ReceiveThread(IPEndPoint remoteEP)
@@ -137,9 +142,21 @@ namespace Server
             catch (Exception ex)
             {
                 // Handle any exceptions that occur during sending
-             //   MessageBox.Show("Error sending data: " + ex.Message);
+                //   MessageBox.Show("Error sending data: " + ex.Message);
             }
         }
+
+        //private void SendUserTestData(List<UserTest> userTests)
+        //{
+        //    // Match UserTest objects with the corresponding User objects
+        //    foreach (var userTest in userTests)
+        //    {
+        //        userTest.User = users.FirstOrDefault(u => u.Id == userTest.User.Id);
+        //    }
+
+        //    // Send the updated userTests list over the network
+        //    // ...
+        //}
         private void SendUserTestData(List<UserTest> userTests)
         {
             try
@@ -165,7 +182,7 @@ namespace Server
                 //   MessageBox.Show("Error sending data: " + ex.Message);
             }
         }
-        private void SendTestData(List<DALTestSystemDB.Test> testsForUser)
+        private void SendDbInfoTestsForClient(List<DALTestSystemDB.Test> TestsForCleint)
         {
             try
             {
@@ -179,7 +196,7 @@ namespace Server
                 var binaryFormatter = new BinaryFormatter();
                 using (var memoryStream = new MemoryStream())
                 {
-                    binaryFormatter.Serialize(memoryStream, testsForUser);
+                    binaryFormatter.Serialize(memoryStream, TestsForCleint);
                     byte[] buffer = memoryStream.ToArray();
                     udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
                 }
@@ -190,6 +207,98 @@ namespace Server
                 //   MessageBox.Show("Error sending data: " + ex.Message);
             }
         }
+        private void SendDbInfoQuestionsForClient(List<DALTestSystemDB.Question> QuestionsForCleint)
+        {
+            try
+            {
+                // Check if udpClient is null
+                ////if (udpClient == null)
+                ////{
+                ////    MessageBox.Show("UDP client is not initialized.");
+                ////    return;
+                ////}
+
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, QuestionsForCleint);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+                //   MessageBox.Show("Error sending data: " + ex.Message);
+            }
+        }
+        private void SendTestData(List<DALTestSystemDB.Test> testForClient)
+        {
+            try
+            {
+                // Check if udpClient is null
+                ////if (udpClient == null)
+                ////{
+                ////    MessageBox.Show("UDP client is not initialized.");
+                ////    return;
+                ////}
+
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, testForClient);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            }
+        private void SendQuestions(List<DALTestSystemDB.Question> questions)
+        {
+            try
+            {
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, questions);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+                // MessageBox.Show("Error sending data: " + ex.Message);
+            }
+        }
+        //private void SendTestData(List<DALTestSystemDB.Test> testsForUser)
+        //{
+        //    try
+        //    {
+        //        // Check if udpClient is null
+        //        ////if (udpClient == null)
+        //        ////{
+        //        ////    MessageBox.Show("UDP client is not initialized.");
+        //        ////    return;
+        //        ////}
+
+        //        var binaryFormatter = new BinaryFormatter();
+        //        using (var memoryStream = new MemoryStream())
+        //        {
+        //            binaryFormatter.Serialize(memoryStream, testsForUser);
+        //            byte[] buffer = memoryStream.ToArray();
+        //            udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Handle any exceptions that occur during sending
+        //        //   MessageBox.Show("Error sending data: " + ex.Message);
+        //    }
+        //}
         List<Group> groups = new List<Group>();
         List<UserTest> userTest = new List<UserTest>();
         List<User> users = new List<User>();
@@ -269,12 +378,19 @@ namespace Server
             using (GenericUnitOfWork work = new GenericUnitOfWork(new TestSystemContext(options)))
             {
                 IGenericRepository<User> repositoryUsers = work.Repository<User>();
+                IGenericRepository<DALTestSystemDB.Question> repositoryQuestions = work.Repository<DALTestSystemDB.Question>();
                 dataGridView1.DataSource = repositoryUsers.GetAll();
                 dataGridView5.DataSource = repositoryUsers.GetAll();
                 users = repositoryUsers.GetAll().ToList();
                 usersToSend = users;
 
                 // Send user data to the multicast group
+                QuestionsToSend = repositoryQuestions.GetAll().ToList();
+                foreach (var item in QuestionsToSend)
+                {
+                    item.Img = null;
+                }
+                SendQuestions(QuestionsToSend);
                 SendUserData(usersToSend);
                 textBox1.Text = users.Count().ToString();
                 int adminCount = 0;
@@ -303,10 +419,18 @@ namespace Server
             using (GenericUnitOfWork work = new GenericUnitOfWork(new TestSystemContext(options)))
             {
                 IGenericRepository<UserTest> repositoryUserTest = work.Repository<UserTest>();
+                IGenericRepository<DALTestSystemDB.Test> repositoryTest = work.Repository<DALTestSystemDB.Test>();
                 dataGridView7.DataSource = repositoryUserTest.GetAll();
                 userTest = repositoryUserTest.GetAll().ToList();
+                
                 userTestToSend = userTest;
+                testsForUser = repositoryTest.GetAll().ToList();
 
+                usersToSend = users;
+
+                // Send user data to the multicast group
+                SendUserData(usersToSend);
+                SendTestData(testsForUser);
                 // Send user data to the multicast group
                 SendUserTestData(userTestToSend);
 
@@ -330,9 +454,9 @@ namespace Server
                 dataGridView2.DataSource = repositoryTest.GetAll();
                 textBox10.Text = repositoryTest.GetAll().Count().ToString();
                 testsForUser = repositoryTest.GetAll().ToList();
-
+                TestToSend = repositoryTest.GetAll().ToList();
                 // Send user data to the multicast group
-                SendTestData(testsForUser);
+                SendTestData(TestToSend);
             }
         }
         private void InitializeDataGridViewGroupUser()

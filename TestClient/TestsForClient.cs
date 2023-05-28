@@ -13,6 +13,7 @@ namespace TestClient
     public partial class TestsForClient : Form
     {
         private string userName;
+        Test getTested;
         public TestsForClient()
         {
             InitializeComponent();
@@ -23,11 +24,21 @@ namespace TestClient
            
             label4.Text = user.Login;
         }
-        public TestsForClient(IGenericRepository<Test> test)
+        public TestsForClient(Test test,User user,List<UserTest> userTest)
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = test;
+            List<UserTest> userTestsForCetainUser = new List<UserTest>();
+            foreach (var item in userTest)
+            {
+                if(item.UserId == user.Id)
+                {
+                    userTestsForCetainUser.Add(item);
+                }
+            }
+            label4.Text = user.FirstName;
+            dataGridView1.DataSource = userTestsForCetainUser;
+            getTested = test;
         
         }
 
@@ -38,7 +49,8 @@ namespace TestClient
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            GetTested tested = new GetTested(getTested);
+            tested.ShowDialog();
         }
     }
 }

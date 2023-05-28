@@ -104,18 +104,17 @@ namespace Server
             this.label35 = new System.Windows.Forms.Label();
             this.activePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panelServer = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.label44 = new System.Windows.Forms.Label();
-            this.panelReviewTests = new System.Windows.Forms.Panel();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
+            this.panelTests = new System.Windows.Forms.Panel();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panelLoadTests = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -140,22 +139,23 @@ namespace Server
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.panelServer = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label44 = new System.Windows.Forms.Label();
             this.panelTestsExplorer = new System.Windows.Forms.Panel();
             this.deleteTestBtn = new System.Windows.Forms.Button();
             this.addTestBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label26 = new System.Windows.Forms.Label();
-            this.panelTests = new System.Windows.Forms.Panel();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.panelReviewTests = new System.Windows.Forms.Panel();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.panelGeneral.SuspendLayout();
             this.panelUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -167,9 +167,7 @@ namespace Server
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panelServer.SuspendLayout();
-            this.panelReviewTests.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            this.panelTests.SuspendLayout();
             this.panelLoadTests.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -177,14 +175,16 @@ namespace Server
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panelServer.SuspendLayout();
             this.panelTestsExplorer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panelTests.SuspendLayout();
+            this.panelReviewTests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(721, 336);
+            this.button1.Location = new System.Drawing.Point(887, 201);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(18, 24);
             this.button1.TabIndex = 0;
@@ -195,7 +195,7 @@ namespace Server
             // treeView1
             // 
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.treeView1.Location = new System.Drawing.Point(3, 1);
+            this.treeView1.Location = new System.Drawing.Point(3, 6);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "General";
             treeNode1.Text = "General";
@@ -225,7 +225,7 @@ namespace Server
             treeNode7,
             treeNode10,
             treeNode11});
-            this.treeView1.Size = new System.Drawing.Size(158, 363);
+            this.treeView1.Size = new System.Drawing.Size(158, 382);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -261,10 +261,9 @@ namespace Server
             this.panelGeneral.Controls.Add(this.label5);
             this.panelGeneral.Controls.Add(this.label4);
             this.panelGeneral.Controls.Add(this.label1);
-            this.panelGeneral.Controls.Add(this.button1);
-            this.panelGeneral.Location = new System.Drawing.Point(852, 307);
+            this.panelGeneral.Location = new System.Drawing.Point(22, 389);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(114, 38);
+            this.panelGeneral.Size = new System.Drawing.Size(90, 34);
             this.panelGeneral.TabIndex = 2;
             this.panelGeneral.Visible = false;
             // 
@@ -532,15 +531,15 @@ namespace Server
             this.panelUsers.Controls.Add(this.AddUserBtn);
             this.panelUsers.Controls.Add(this.dataGridView1);
             this.panelUsers.Controls.Add(this.label2);
-            this.panelUsers.Location = new System.Drawing.Point(852, 58);
+            this.panelUsers.Location = new System.Drawing.Point(600, 394);
             this.panelUsers.Name = "panelUsers";
-            this.panelUsers.Size = new System.Drawing.Size(44, 31);
+            this.panelUsers.Size = new System.Drawing.Size(104, 31);
             this.panelUsers.TabIndex = 3;
             this.panelUsers.Visible = false;
             // 
             // DeleteUserBtn
             // 
-            this.DeleteUserBtn.Location = new System.Drawing.Point(206, 17);
+            this.DeleteUserBtn.Location = new System.Drawing.Point(190, 30);
             this.DeleteUserBtn.Name = "DeleteUserBtn";
             this.DeleteUserBtn.Size = new System.Drawing.Size(75, 23);
             this.DeleteUserBtn.TabIndex = 4;
@@ -550,7 +549,7 @@ namespace Server
             // 
             // EditUserBtn
             // 
-            this.EditUserBtn.Location = new System.Drawing.Point(125, 17);
+            this.EditUserBtn.Location = new System.Drawing.Point(109, 30);
             this.EditUserBtn.Name = "EditUserBtn";
             this.EditUserBtn.Size = new System.Drawing.Size(75, 23);
             this.EditUserBtn.TabIndex = 3;
@@ -560,7 +559,7 @@ namespace Server
             // 
             // AddUserBtn
             // 
-            this.AddUserBtn.Location = new System.Drawing.Point(44, 17);
+            this.AddUserBtn.Location = new System.Drawing.Point(28, 30);
             this.AddUserBtn.Name = "AddUserBtn";
             this.AddUserBtn.Size = new System.Drawing.Size(75, 23);
             this.AddUserBtn.TabIndex = 2;
@@ -571,7 +570,7 @@ namespace Server
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 59);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(711, 286);
@@ -581,7 +580,7 @@ namespace Server
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 8);
+            this.label2.Location = new System.Drawing.Point(28, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 0;
@@ -596,7 +595,7 @@ namespace Server
             this.panelGroups.Controls.Add(this.dataGridView9);
             this.panelGroups.Controls.Add(this.dataGridView8);
             this.panelGroups.Controls.Add(this.label3);
-            this.panelGroups.Location = new System.Drawing.Point(6, 338);
+            this.panelGroups.Location = new System.Drawing.Point(118, 390);
             this.panelGroups.Name = "panelGroups";
             this.panelGroups.Size = new System.Drawing.Size(63, 25);
             this.panelGroups.TabIndex = 4;
@@ -679,7 +678,7 @@ namespace Server
             this.panelAssignTests.Controls.Add(this.label37);
             this.panelAssignTests.Controls.Add(this.label36);
             this.panelAssignTests.Controls.Add(this.label35);
-            this.panelAssignTests.Location = new System.Drawing.Point(767, 364);
+            this.panelAssignTests.Location = new System.Drawing.Point(118, 432);
             this.panelAssignTests.Name = "panelAssignTests";
             this.panelAssignTests.Size = new System.Drawing.Size(82, 23);
             this.panelAssignTests.TabIndex = 9;
@@ -760,141 +759,134 @@ namespace Server
             // 
             // activePanel
             // 
-            this.activePanel.Location = new System.Drawing.Point(852, 96);
+            this.activePanel.Location = new System.Drawing.Point(731, 138);
             this.activePanel.Name = "activePanel";
-            this.activePanel.Size = new System.Drawing.Size(200, 100);
+            this.activePanel.Size = new System.Drawing.Size(191, 42);
             this.activePanel.TabIndex = 5;
             this.activePanel.Visible = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.panelServer);
-            this.groupBox1.Controls.Add(this.panelReviewTests);
-            this.groupBox1.Controls.Add(this.panelLoadTests);
-            this.groupBox1.Controls.Add(this.panelGroups);
-            this.groupBox1.Controls.Add(this.panelTestsExplorer);
             this.groupBox1.Controls.Add(this.panelTests);
+            this.groupBox1.Controls.Add(this.activePanel);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.panelGroups);
             this.groupBox1.Controls.Add(this.panelAssignTests);
             this.groupBox1.Controls.Add(this.panelUsers);
-            this.groupBox1.Controls.Add(this.activePanel);
+            this.groupBox1.Controls.Add(this.panelLoadTests);
+            this.groupBox1.Controls.Add(this.panelServer);
+            this.groupBox1.Controls.Add(this.panelTestsExplorer);
+            this.groupBox1.Controls.Add(this.panelReviewTests);
             this.groupBox1.Controls.Add(this.panelGeneral);
             this.groupBox1.Location = new System.Drawing.Point(167, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(882, 417);
+            this.groupBox1.Size = new System.Drawing.Size(876, 387);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // panelServer
+            // panelTests
             // 
-            this.panelServer.Controls.Add(this.listView1);
-            this.panelServer.Controls.Add(this.label44);
-            this.panelServer.Location = new System.Drawing.Point(6, 16);
-            this.panelServer.Name = "panelServer";
-            this.panelServer.Size = new System.Drawing.Size(76, 37);
-            this.panelServer.TabIndex = 10;
+            this.panelTests.Controls.Add(this.textBox17);
+            this.panelTests.Controls.Add(this.textBox16);
+            this.panelTests.Controls.Add(this.textBox15);
+            this.panelTests.Controls.Add(this.textBox14);
+            this.panelTests.Controls.Add(this.label25);
+            this.panelTests.Controls.Add(this.label24);
+            this.panelTests.Controls.Add(this.label23);
+            this.panelTests.Controls.Add(this.label22);
+            this.panelTests.Controls.Add(this.label21);
+            this.panelTests.Controls.Add(this.label20);
+            this.panelTests.Location = new System.Drawing.Point(451, 393);
+            this.panelTests.Name = "panelTests";
+            this.panelTests.Size = new System.Drawing.Size(48, 29);
+            this.panelTests.TabIndex = 6;
             // 
-            // listView1
+            // textBox17
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(14, 33);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(183, 346);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.textBox17.Location = new System.Drawing.Point(153, 144);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(100, 23);
+            this.textBox17.TabIndex = 9;
             // 
-            // label44
+            // textBox16
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(14, 15);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(79, 15);
-            this.label44.TabIndex = 0;
-            this.label44.Text = "Server clients:";
+            this.textBox16.Location = new System.Drawing.Point(153, 115);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.Size = new System.Drawing.Size(100, 23);
+            this.textBox16.TabIndex = 8;
             // 
-            // panelReviewTests
+            // textBox15
             // 
-            this.panelReviewTests.Controls.Add(this.dataGridView10);
-            this.panelReviewTests.Controls.Add(this.button7);
-            this.panelReviewTests.Controls.Add(this.button6);
-            this.panelReviewTests.Controls.Add(this.textBox25);
-            this.panelReviewTests.Controls.Add(this.textBox24);
-            this.panelReviewTests.Controls.Add(this.label43);
-            this.panelReviewTests.Controls.Add(this.label42);
-            this.panelReviewTests.Controls.Add(this.label41);
-            this.panelReviewTests.Location = new System.Drawing.Point(783, 104);
-            this.panelReviewTests.Name = "panelReviewTests";
-            this.panelReviewTests.Size = new System.Drawing.Size(142, 287);
-            this.panelReviewTests.TabIndex = 9;
+            this.textBox15.Location = new System.Drawing.Point(153, 86);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(100, 23);
+            this.textBox15.TabIndex = 7;
             // 
-            // dataGridView10
+            // textBox14
             // 
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(36, 132);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.RowTemplate.Height = 25;
-            this.dataGridView10.Size = new System.Drawing.Size(735, 225);
-            this.dataGridView10.TabIndex = 7;
+            this.textBox14.Location = new System.Drawing.Point(153, 57);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(100, 23);
+            this.textBox14.TabIndex = 6;
             // 
-            // button7
+            // label25
             // 
-            this.button7.Location = new System.Drawing.Point(611, 45);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(64, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "...";
-            this.button7.UseVisualStyleBackColor = true;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(53, 152);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(83, 15);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "AVG q-s count";
             // 
-            // button6
+            // label24
             // 
-            this.button6.Location = new System.Drawing.Point(370, 45);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "...";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(53, 123);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(82, 15);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Min q-s count";
             // 
-            // textBox25
+            // label23
             // 
-            this.textBox25.Location = new System.Drawing.Point(425, 45);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(179, 23);
-            this.textBox25.TabIndex = 4;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(51, 94);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(84, 15);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Max q-s count";
             // 
-            // textBox24
+            // label22
             // 
-            this.textBox24.Location = new System.Drawing.Point(181, 45);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(183, 23);
-            this.textBox24.TabIndex = 3;
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(51, 65);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(71, 15);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Count in DB";
             // 
-            // label43
+            // label21
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(425, 26);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(27, 15);
-            this.label43.TabIndex = 2;
-            this.label43.Text = "Test";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(24, 37);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(70, 15);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Information";
             // 
-            // label42
+            // label20
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(181, 26);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(30, 15);
-            this.label42.TabIndex = 1;
-            this.label42.Text = "User";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(7, 11);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(103, 15);
-            this.label41.TabIndex = 0;
-            this.label41.Text = "Review test results";
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(12, 11);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(32, 15);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Tests";
             // 
             // panelLoadTests
             // 
@@ -904,9 +896,9 @@ namespace Server
             this.panelLoadTests.Controls.Add(this.groupBox3);
             this.panelLoadTests.Controls.Add(this.groupBox2);
             this.panelLoadTests.Controls.Add(this.label27);
-            this.panelLoadTests.Location = new System.Drawing.Point(99, 368);
+            this.panelLoadTests.Location = new System.Drawing.Point(22, 432);
             this.panelLoadTests.Name = "panelLoadTests";
-            this.panelLoadTests.Size = new System.Drawing.Size(301, 141);
+            this.panelLoadTests.Size = new System.Drawing.Size(90, 29);
             this.panelLoadTests.TabIndex = 8;
             // 
             // button4
@@ -1125,20 +1117,47 @@ namespace Server
             this.label27.TabIndex = 0;
             this.label27.Text = "Load test";
             // 
+            // panelServer
+            // 
+            this.panelServer.Controls.Add(this.listView1);
+            this.panelServer.Controls.Add(this.label44);
+            this.panelServer.Location = new System.Drawing.Point(504, 395);
+            this.panelServer.Name = "panelServer";
+            this.panelServer.Size = new System.Drawing.Size(93, 37);
+            this.panelServer.TabIndex = 10;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(14, 33);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(183, 346);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(14, 15);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 15);
+            this.label44.TabIndex = 0;
+            this.label44.Text = "Server clients:";
+            // 
             // panelTestsExplorer
             // 
             this.panelTestsExplorer.Controls.Add(this.deleteTestBtn);
             this.panelTestsExplorer.Controls.Add(this.addTestBtn);
             this.panelTestsExplorer.Controls.Add(this.dataGridView2);
             this.panelTestsExplorer.Controls.Add(this.label26);
-            this.panelTestsExplorer.Location = new System.Drawing.Point(449, 103);
+            this.panelTestsExplorer.Location = new System.Drawing.Point(329, 393);
             this.panelTestsExplorer.Name = "panelTestsExplorer";
-            this.panelTestsExplorer.Size = new System.Drawing.Size(85, 27);
+            this.panelTestsExplorer.Size = new System.Drawing.Size(116, 23);
             this.panelTestsExplorer.TabIndex = 7;
             // 
             // deleteTestBtn
             // 
-            this.deleteTestBtn.Location = new System.Drawing.Point(152, 26);
+            this.deleteTestBtn.Location = new System.Drawing.Point(105, 26);
             this.deleteTestBtn.Name = "deleteTestBtn";
             this.deleteTestBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteTestBtn.TabIndex = 3;
@@ -1147,7 +1166,7 @@ namespace Server
             // 
             // addTestBtn
             // 
-            this.addTestBtn.Location = new System.Drawing.Point(71, 26);
+            this.addTestBtn.Location = new System.Drawing.Point(24, 26);
             this.addTestBtn.Name = "addTestBtn";
             this.addTestBtn.Size = new System.Drawing.Size(75, 23);
             this.addTestBtn.TabIndex = 2;
@@ -1160,126 +1179,107 @@ namespace Server
             this.dataGridView2.Location = new System.Drawing.Point(24, 50);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(714, 269);
+            this.dataGridView2.Size = new System.Drawing.Size(809, 318);
             this.dataGridView2.TabIndex = 1;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(12, 8);
+            this.label26.Location = new System.Drawing.Point(24, 8);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(78, 15);
             this.label26.TabIndex = 0;
             this.label26.Text = "Tests explorer";
             // 
-            // panelTests
+            // panelReviewTests
             // 
-            this.panelTests.Controls.Add(this.textBox17);
-            this.panelTests.Controls.Add(this.textBox16);
-            this.panelTests.Controls.Add(this.textBox15);
-            this.panelTests.Controls.Add(this.textBox14);
-            this.panelTests.Controls.Add(this.label25);
-            this.panelTests.Controls.Add(this.label24);
-            this.panelTests.Controls.Add(this.label23);
-            this.panelTests.Controls.Add(this.label22);
-            this.panelTests.Controls.Add(this.label21);
-            this.panelTests.Controls.Add(this.label20);
-            this.panelTests.Location = new System.Drawing.Point(855, 351);
-            this.panelTests.Name = "panelTests";
-            this.panelTests.Size = new System.Drawing.Size(48, 29);
-            this.panelTests.TabIndex = 6;
+            this.panelReviewTests.Controls.Add(this.dataGridView10);
+            this.panelReviewTests.Controls.Add(this.button7);
+            this.panelReviewTests.Controls.Add(this.button6);
+            this.panelReviewTests.Controls.Add(this.textBox25);
+            this.panelReviewTests.Controls.Add(this.textBox24);
+            this.panelReviewTests.Controls.Add(this.label43);
+            this.panelReviewTests.Controls.Add(this.label42);
+            this.panelReviewTests.Controls.Add(this.label41);
+            this.panelReviewTests.Location = new System.Drawing.Point(187, 393);
+            this.panelReviewTests.Name = "panelReviewTests";
+            this.panelReviewTests.Size = new System.Drawing.Size(136, 30);
+            this.panelReviewTests.TabIndex = 9;
             // 
-            // textBox17
+            // dataGridView10
             // 
-            this.textBox17.Location = new System.Drawing.Point(153, 144);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(100, 23);
-            this.textBox17.TabIndex = 9;
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Location = new System.Drawing.Point(36, 132);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.RowTemplate.Height = 25;
+            this.dataGridView10.Size = new System.Drawing.Size(735, 225);
+            this.dataGridView10.TabIndex = 7;
             // 
-            // textBox16
+            // button7
             // 
-            this.textBox16.Location = new System.Drawing.Point(153, 115);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(100, 23);
-            this.textBox16.TabIndex = 8;
+            this.button7.Location = new System.Drawing.Point(611, 45);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(64, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "...";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // textBox15
+            // button6
             // 
-            this.textBox15.Location = new System.Drawing.Point(153, 86);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(100, 23);
-            this.textBox15.TabIndex = 7;
+            this.button6.Location = new System.Drawing.Point(370, 45);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(48, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "...";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox14
+            // textBox25
             // 
-            this.textBox14.Location = new System.Drawing.Point(153, 57);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(100, 23);
-            this.textBox14.TabIndex = 6;
+            this.textBox25.Location = new System.Drawing.Point(425, 45);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(179, 23);
+            this.textBox25.TabIndex = 4;
             // 
-            // label25
+            // textBox24
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(53, 152);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 15);
-            this.label25.TabIndex = 5;
-            this.label25.Text = "AVG q-s count";
+            this.textBox24.Location = new System.Drawing.Point(181, 45);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(183, 23);
+            this.textBox24.TabIndex = 3;
             // 
-            // label24
+            // label43
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(53, 123);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(82, 15);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Min q-s count";
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(425, 26);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(27, 15);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "Test";
             // 
-            // label23
+            // label42
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(51, 94);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(84, 15);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Max q-s count";
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(181, 26);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(30, 15);
+            this.label42.TabIndex = 1;
+            this.label42.Text = "User";
             // 
-            // label22
+            // label41
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(51, 65);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(71, 15);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Count in DB";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(24, 37);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 15);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Information";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(12, 11);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(32, 15);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Tests";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(7, 11);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(103, 15);
+            this.label41.TabIndex = 0;
+            this.label41.Text = "Review test results";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 418);
+            this.ClientSize = new System.Drawing.Size(1084, 466);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
@@ -1299,11 +1299,8 @@ namespace Server
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.panelServer.ResumeLayout(false);
-            this.panelServer.PerformLayout();
-            this.panelReviewTests.ResumeLayout(false);
-            this.panelReviewTests.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            this.panelTests.ResumeLayout(false);
+            this.panelTests.PerformLayout();
             this.panelLoadTests.ResumeLayout(false);
             this.panelLoadTests.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1313,11 +1310,14 @@ namespace Server
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panelServer.ResumeLayout(false);
+            this.panelServer.PerformLayout();
             this.panelTestsExplorer.ResumeLayout(false);
             this.panelTestsExplorer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panelTests.ResumeLayout(false);
-            this.panelTests.PerformLayout();
+            this.panelReviewTests.ResumeLayout(false);
+            this.panelReviewTests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
             this.ResumeLayout(false);
 
         }
