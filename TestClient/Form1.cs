@@ -30,6 +30,7 @@ namespace TestClient
         private List<UserTest> userTestToInitialize = new List<UserTest>();
         private List<Test> testForClient = new List<Test>();
         private List<Question> questionForClients = new List<Question>();
+        private List<Answer> answersForClients = new List<Answer>();
         private ManualResetEvent dataReceivedEvent = new ManualResetEvent(false);
         private User userToAdd = new User();
 
@@ -62,6 +63,7 @@ namespace TestClient
                         byte[] buffer2 = udpClient.Receive(ref remoteEndPoint);
                         byte[] buffer3 = udpClient.Receive(ref remoteEndPoint);
                         byte[] buffer4 = udpClient.Receive(ref remoteEndPoint);
+                        byte[] buffer5 = udpClient.Receive(ref remoteEndPoint);
                         var binaryFormatter = new BinaryFormatter();
                         using (var memoryStream = new MemoryStream(buffer))
                         {
@@ -81,10 +83,14 @@ namespace TestClient
                             testForClient = binaryFormatter.Deserialize(memoryStream) as List<Test>;
                             
                         }
-                        //using (var memoryStream = new MemoryStream(buffer4))
-                        //{
-                        //    questionForClients = binaryFormatter.Deserialize(memoryStream) as List<Question>;
-                        //}
+                        using (var memoryStream = new MemoryStream(buffer4))
+                        {
+                            questionForClients = binaryFormatter.Deserialize(memoryStream) as List<Question>;
+                        }
+                        using (var memoryStream = new MemoryStream(buffer5))
+                        {
+                            answersForClients = binaryFormatter.Deserialize(memoryStream) as List<Answer>;
+                        }
 
                         // Signal that the data has been received and processed
                         dataReceivedEvent.Set();
@@ -136,7 +142,7 @@ namespace TestClient
                 User toTest = new User();
               //  UserTest tests = (UserTest)toTest.UserTests;
                 
-                TestsForClient testsForClient = new TestsForClient(testForClient[1], userToAdd, userTestToInitialize);
+                TestsForClient testsForClient = new TestsForClient(testForClient[1], userToAdd, userTestToInitialize,questionForClients,answersForClients);
                 testsForClient.ShowDialog();
             }
             else

@@ -48,6 +48,7 @@ namespace Server
         private List<UserTest> userTestToSend = new List<UserTest>();
         private List<DALTestSystemDB.Test> TestToSend = new List<DALTestSystemDB.Test>();
         private List<DALTestSystemDB.Question> QuestionsToSend = new List<DALTestSystemDB.Question>();
+        private List<DALTestSystemDB.Answer> AnswersToSend = new List<DALTestSystemDB.Answer>();
         private UdpClient udpClient;
         public Form1()
         {
@@ -67,6 +68,7 @@ namespace Server
             SendDbInfoTests(userTestToSend);
             SendDbInfoTestsForClient(TestToSend);
             SendDbInfoQuestionsForClient(QuestionsToSend);
+            SendDbInfoAnswersForClient(AnswersToSend);
 
         }
 
@@ -232,6 +234,31 @@ namespace Server
                 //   MessageBox.Show("Error sending data: " + ex.Message);
             }
         }
+        private void SendDbInfoAnswersForClient(List<DALTestSystemDB.Answer> AnswersForCleint)
+        {
+            try
+            {
+                // Check if udpClient is null
+                ////if (udpClient == null)
+                ////{
+                ////    MessageBox.Show("UDP client is not initialized.");
+                ////    return;
+                ////}
+
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, AnswersForCleint);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+                //   MessageBox.Show("Error sending data: " + ex.Message);
+            }
+        }
         private void SendTestData(List<DALTestSystemDB.Test> testForClient)
         {
             try
@@ -264,6 +291,24 @@ namespace Server
                 using (var memoryStream = new MemoryStream())
                 {
                     binaryFormatter.Serialize(memoryStream, questions);
+                    byte[] buffer = memoryStream.ToArray();
+                    udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during sending
+                // MessageBox.Show("Error sending data: " + ex.Message);
+            }
+        }
+        private void SendAnswers(List<DALTestSystemDB.Answer> answers)
+        {
+            try
+            {
+                var binaryFormatter = new BinaryFormatter();
+                using (var memoryStream = new MemoryStream())
+                {
+                    binaryFormatter.Serialize(memoryStream, answers);
                     byte[] buffer = memoryStream.ToArray();
                     udpClient.Send(buffer, buffer.Length, multicastAddress, multicastPort);
                 }
@@ -379,10 +424,14 @@ namespace Server
             {
                 IGenericRepository<User> repositoryUsers = work.Repository<User>();
                 IGenericRepository<DALTestSystemDB.Question> repositoryQuestions = work.Repository<DALTestSystemDB.Question>();
+                IGenericRepository<DALTestSystemDB.Answer> repositoryAnswers = work.Repository<DALTestSystemDB.Answer>();
+                IGenericRepository<DALTestSystemDB.Test> repositoryTest = work.Repository<DALTestSystemDB.Test>();
                 dataGridView1.DataSource = repositoryUsers.GetAll();
                 dataGridView5.DataSource = repositoryUsers.GetAll();
                 users = repositoryUsers.GetAll().ToList();
                 usersToSend = users;
+
+                AnswersToSend = repositoryAnswers.GetAll().ToList();
 
                 // Send user data to the multicast group
                 QuestionsToSend = repositoryQuestions.GetAll().ToList();
@@ -390,7 +439,9 @@ namespace Server
                 {
                     item.Img = null;
                 }
+                
                 SendQuestions(QuestionsToSend);
+                SendAnswers(AnswersToSend);
                 SendUserData(usersToSend);
                 textBox1.Text = users.Count().ToString();
                 int adminCount = 0;
@@ -402,6 +453,20 @@ namespace Server
                     }
                 }
                 textBox2.Text = adminCount.ToString();
+                var questions = QuestionsToSend;
+                var maxId = questions.Max(x => x.TestId);
+                var maxQuestionsCount = questions.Count(x => x.TestId == maxId);
+                textBox11.Text = maxQuestionsCount.ToString();
+                var minId = questions.Min(x => x.TestId);
+                var minQuestionsCount = questions.Count(x => x.TestId == minId);
+                textBox12.Text = minQuestionsCount.ToString();
+                textBox13.Text = (Convert.ToInt32((maxQuestionsCount + minQuestionsCount) /2)).ToString();
+                textBox14.Text = repositoryTest.GetAll().ToList().Count().ToString();
+                textBox15.Text = maxQuestionsCount.ToString();
+                textBox16.Text = minQuestionsCount.ToString();
+                textBox17.Text = (Convert.ToInt32((maxQuestionsCount + minQuestionsCount) / 2)).ToString();
+
+
             }
         }
         private void InitializeDataGridViewUserTest()
@@ -638,6 +703,8 @@ namespace Server
                 textBox21.Text = test.Info;
                 textBox22.Text = test.Questions.Count().ToString();
                 textBox23.Text = test.PassPercent.ToString();
+               
+
                 dataGridView3.DataSource = test.Questions;
                 //dataGridView2.DataSource = question.Answers;
                 // List<Question> forTEst =  new List<Question>();

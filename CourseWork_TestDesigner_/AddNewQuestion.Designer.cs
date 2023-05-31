@@ -263,9 +263,9 @@ namespace CourseWork_TestDesigner_
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.BindingSource bindingSource2;
     }
 }

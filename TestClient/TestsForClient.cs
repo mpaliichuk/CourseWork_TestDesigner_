@@ -14,6 +14,8 @@ namespace TestClient
     {
         private string userName;
         Test getTested;
+        List<Question> getQuestions;
+        List<Answer> getAnswers;
         public TestsForClient()
         {
             InitializeComponent();
@@ -24,11 +26,12 @@ namespace TestClient
            
             label4.Text = user.Login;
         }
-        public TestsForClient(Test test,User user,List<UserTest> userTest)
+        public TestsForClient(Test test,User user,List<UserTest> userTest,List<Question> userQuestions,List<Answer> answersForClient)
         {
             InitializeComponent();
-
+            getQuestions = userQuestions;
             List<UserTest> userTestsForCetainUser = new List<UserTest>();
+            getAnswers = answersForClient;
             foreach (var item in userTest)
             {
                 if(item.UserId == user.Id)
@@ -36,6 +39,15 @@ namespace TestClient
                     userTestsForCetainUser.Add(item);
                 }
             }
+
+            //List<Question> questionsForCetainUser = new List<Question>();
+            //foreach (var item in userQuestions)
+            //{
+            //    if (item.Test.Id == user)
+            //    {
+            //        questionsForCetainUser.Add(item);
+            //    }
+            //}
             label4.Text = user.FirstName;
             dataGridView1.DataSource = userTestsForCetainUser;
             getTested = test;
@@ -49,7 +61,7 @@ namespace TestClient
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GetTested tested = new GetTested(getTested);
+            GetTested tested = new GetTested(getTested, getQuestions,getAnswers);
             tested.ShowDialog();
         }
     }

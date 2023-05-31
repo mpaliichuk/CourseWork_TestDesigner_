@@ -82,6 +82,7 @@ namespace CourseWork_TestDesigner_
         {
             InitializeComponent();
             form1 = fr;
+
            // bindingSource2.DataSource = form1.questions;
         }
         Form1 form1 = new Form1();

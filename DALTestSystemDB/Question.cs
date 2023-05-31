@@ -8,6 +8,7 @@ namespace DALTestSystemDB
     public class Question
     {
         public int Id { get; set; }
+        public int TestId { get; set; }
         public string QuestionText { get; set; }
         public string Img { get; set; }
         public int Points { get; set; }

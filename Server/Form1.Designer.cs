@@ -261,9 +261,9 @@ namespace Server
             this.panelGeneral.Controls.Add(this.label5);
             this.panelGeneral.Controls.Add(this.label4);
             this.panelGeneral.Controls.Add(this.label1);
-            this.panelGeneral.Location = new System.Drawing.Point(22, 389);
+            this.panelGeneral.Location = new System.Drawing.Point(16, 386);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(90, 34);
+            this.panelGeneral.Size = new System.Drawing.Size(96, 39);
             this.panelGeneral.TabIndex = 2;
             this.panelGeneral.Visible = false;
             // 
@@ -797,9 +797,9 @@ namespace Server
             this.panelTests.Controls.Add(this.label22);
             this.panelTests.Controls.Add(this.label21);
             this.panelTests.Controls.Add(this.label20);
-            this.panelTests.Location = new System.Drawing.Point(451, 393);
+            this.panelTests.Location = new System.Drawing.Point(395, 422);
             this.panelTests.Name = "panelTests";
-            this.panelTests.Size = new System.Drawing.Size(48, 29);
+            this.panelTests.Size = new System.Drawing.Size(82, 27);
             this.panelTests.TabIndex = 6;
             // 
             // textBox17
