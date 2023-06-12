@@ -12,5 +12,5 @@
 
 
 
-                                                   Main structure of this project
+                                      Main structure of this project
 ![CourseWork_Structure](https://github.com/mpaliichuk/CourseWork_TestDesigner_/assets/41876758/ef3cf82f-d5e0-485b-b11a-f6e4e0521a67)
